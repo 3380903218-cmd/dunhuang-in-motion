@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -14,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "d4fbf19c7324e3ddb7b3a4d25ba85dff6c5f033a616ffd6a8a16fbed386612d8",
-      "bytes": 37498
+      "sha256": "bec999029ae8a98e0970f8d77f3e7711bacf29d64fd2dd8127ae464b0a34b89c",
+      "bytes": 38306
     },
     {
       "path": "dist/assets/diamond-sutra.jpg",
@@ -44,8 +44,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "6db291dfc729e90df37374dea2e0e5b7c2c84e4a9c5131d1273cb94ca27458a1",
-      "bytes": 22914
+      "sha256": "3eb432064b7f5bfd58bcbd2b8e55cbc62593a40f13f4a7494336721338cc03de",
+      "bytes": 24461
     },
     {
       "path": "dist/network-data.js",
@@ -59,8 +59,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "b59fc775a69ab93d86a597e9735b9455a161bd032690d3d14ffccf64323e5283",
-      "bytes": 31440
+      "sha256": "67a99be2babd512630f3bde16b2e9271c436107e763bbdeabca5d3d95844cb0e",
+      "bytes": 31577
     },
     {
       "path": "dist/story.css",
@@ -82,6 +82,6 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "d96500bf6649ea464ac745f6affdbe4d70fdc8fc",
-  "presentation": "Three-chapter bilingual story edition"
+  "previous_release_commit": "087e9644aa1597db995cb573dd33ea7371798f8e",
+  "presentation": "Three-chapter bilingual story edition; plain-language copy revision"
 }
