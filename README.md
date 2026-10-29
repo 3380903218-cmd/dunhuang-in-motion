@@ -106,4 +106,4 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 点击顶部 **Network／传播网络** 可搜索人物、查看关系和证据，并切换传播层或年份。点击已匹配的事件，可跳回路线地图。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
 
-Website release **v2.2.0 · 29 October 2026**.
+Website release **v2.2.1 · 29 October 2026**.

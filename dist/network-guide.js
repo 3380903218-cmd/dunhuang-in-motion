@@ -14,6 +14,9 @@
   };
   const t=k=>words[language()][k],name=n=>n.label[language()]||n.label.en;
   const types={Person:['Person','人物'],Collection:['Manuscript batch / collection','文献批次／收藏'],Institution:['Institution','机构'],Government:['Government institution','政府机构'],Work:['Letter / document','信函／文书'],Representation:['Image / copy','图像／复制品'],Event:['Activity','活动'],Object:['Individual object','单件文献'],Expedition:['Expedition','考察队'],PublicationOrganisation:['Publisher','出版机构']};
+  // The reading guide follows the exhibition palette; original Gephi colours stay in the full graph.
+  const guideColors={Person:'#788269',Collection:'#a08a65',Institution:'#7c806b',Government:'#7c806b',Work:'#956c52',Representation:'#968769',Event:'#9a775d',Object:'#a08a65',Expedition:'#788269',PublicationOrganisation:'#956c52'};
+  const guideLineColors={'Knowledge transmission':'#85866f','Physical circulation':'#aa7858','Cross-layer':'#8b7965'};
   const aliases={KE007:['Writing the inspection memorandum','撰写检查备忘录'],KE005:['Unpacking, cataloguing and listing','拆箱、编目与列单'],MAP_KE012:['Ministry telegram','学部发出电报'],KE009:['Displaying manuscripts in Beijing','在北京出示写本'],KE006:['Examining manuscripts in London','在伦敦检查写本'],B0010:['Stein Chinese manuscripts examined in London','在伦敦检查的斯坦因中国写本'],W001:['Inspection memorandum (working title)','检查备忘录（工作命名）']};
   const label=n=>aliases[n.id]?.[language()==='zh'?1:0]||name(n);
   const role=e=>window.DUNHUANG_RELATION_TEXT(e,language(),e.label);
@@ -68,7 +71,7 @@
   }
   function nodeCard(edge,incoming){
     const n=N.get(incoming?edge.source:edge.target),kind=types[n.type]?.[language()==='zh'?1:0]||n.type;
-    return `<button class="relation-card${G.edgeId===edge.id?' selected':''}" data-guide-edge="${esc(edge.id)}" aria-pressed="${G.edgeId===edge.id}" aria-controls="guideEvidence" style="--node-color:${esc(n.color)}"><span class="relation-type"><i aria-hidden="true"></i>${esc(kind)}</span><strong>${esc(label(n))}</strong><span class="relation-role">${esc(role(edge))}</span><span class="relation-direction" aria-hidden="true">→</span></button>`;
+    return `<button class="relation-card${G.edgeId===edge.id?' selected':''}" data-guide-edge="${esc(edge.id)}" aria-pressed="${G.edgeId===edge.id}" aria-controls="guideEvidence" style="--node-color:${guideColors[n.type]||'#8b7965'}"><span class="relation-type"><i aria-hidden="true"></i>${esc(kind)}</span><strong>${esc(label(n))}</strong><span class="relation-role">${esc(role(edge))}</span><span class="relation-direction" aria-hidden="true">→</span></button>`;
   }
   function drawLinks(){
     panel.querySelector('.guide-connectors')?.remove();
@@ -82,15 +85,15 @@
     for(const [selector,incoming] of groups){
       const cards=[...diagram.querySelectorAll(selector)];
       cards.forEach((card,i)=>{
-        const edge=E.get(card.dataset.guideEdge),r=card.getBoundingClientRect(),selected=edge.id===G.edgeId,color=selected?'#984b31':edge.color;
+        const edge=E.get(card.dataset.guideEdge),r=card.getBoundingClientRect(),selected=edge.id===G.edgeId,color=selected?'#984b31':guideLineColors[edge.attributes.Layer]||'#8b7965';
         const marker=document.createElementNS(NS,'marker'),id='guide-arrow-'+(incoming?'in':'out')+'-'+i;
-        for(const [k,v] of Object.entries({id,viewBox:'0 0 8 8',refX:7,refY:4,markerWidth:7,markerHeight:7,orient:'auto'}))marker.setAttribute(k,v);
-        const tip=document.createElementNS(NS,'path');tip.setAttribute('d','M0 1L7 4L0 7Z');tip.setAttribute('fill',color);marker.append(tip);defs.append(marker);
-        const a=incoming?[r.right-bounds.left,r.top+r.height/2-bounds.top]:[box.right-bounds.left,box.top+box.height*(i+1)/(cards.length+1)-bounds.top];
-        const b=incoming?[box.left-bounds.left,box.top+box.height*(i+1)/(cards.length+1)-bounds.top]:[r.left-bounds.left,r.top+r.height/2-bounds.top];
+        for(const [k,v] of Object.entries({id,viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:10,markerHeight:10,markerUnits:'userSpaceOnUse',orient:'auto'}))marker.setAttribute(k,v);
+        const tip=document.createElementNS(NS,'path');tip.setAttribute('d','M3 2L8 5L3 8');tip.setAttribute('fill','none');tip.setAttribute('stroke',color);tip.setAttribute('stroke-width',selected?'1.8':'1.3');tip.setAttribute('stroke-linecap','round');tip.setAttribute('stroke-linejoin','round');marker.append(tip);defs.append(marker);
+        const a=incoming?[r.right-bounds.left+3,r.top+r.height/2-bounds.top]:[box.right-bounds.left+3,box.top+box.height*(i+1)/(cards.length+1)-bounds.top];
+        const b=incoming?[box.left-bounds.left-6,box.top+box.height*(i+1)/(cards.length+1)-bounds.top]:[r.left-bounds.left-6,r.top+r.height/2-bounds.top];
         const gap=(b[0]-a[0])*.55,p=document.createElementNS(NS,'path');
         p.setAttribute('d',`M${a[0]},${a[1]} C${a[0]+gap},${a[1]} ${b[0]-gap},${b[1]} ${b[0]},${b[1]}`);
-        p.setAttribute('fill','none');p.setAttribute('stroke',color);p.setAttribute('stroke-width',selected?'2.8':'1.8');p.setAttribute('marker-end',`url(#${id})`);p.dataset.guideConnector=edge.id;
+        p.setAttribute('fill','none');p.setAttribute('stroke',color);p.setAttribute('stroke-width',selected?'1.9':'1.3');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');p.setAttribute('marker-end',`url(#${id})`);p.dataset.guideConnector=edge.id;
         if(['Proposal made','Recorded promise'].includes(edge.attributes.ProcessState))p.setAttribute('stroke-dasharray','5 4');
         svg.append(p);
       });
