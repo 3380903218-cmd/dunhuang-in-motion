@@ -22,3 +22,6 @@ Source titles, authors, links, page or section references, and evidence limitati
 The README previews are screenshots of this exhibition's map and network, not new historical reconstructions. The underlying image and geography credits above continue to apply.
 
 Publication of this repository does not change the rights in cited scholarship, third-party material or the original project work.
+
+
+Relationship-guide ornament: original inline vector lotus drawing and CSS paper/scroll details, created for this exhibition (release 2.2.3). These decorative details carry no manuscript-condition or provenance meaning.

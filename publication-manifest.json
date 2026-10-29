@@ -1,5 +1,5 @@
 {
-  "version": "2.2.2",
+  "version": "2.2.3",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -44,7 +44,7 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "0cbb2dbb7a1d50fca795e4a8065f53a68ed834a8fc4eb66c3c2546003812f7c3",
+      "sha256": "2c27d43278a4955dd19bd9d0cca84c9e50be39da36bf2bd17c2859963315f1a4",
       "bytes": 25499
     },
     {
@@ -54,13 +54,13 @@
     },
     {
       "path": "dist/network-guide.css",
-      "sha256": "6cbb18dfa30bacd7c54488992bfcc017deac06a514f099defce2f7e0d2843504",
-      "bytes": 9483
+      "sha256": "377079e13f9777bc6d2f28b4b08c19805da176c2217f63619c4f1ebac174cac9",
+      "bytes": 10406
     },
     {
       "path": "dist/network-guide.js",
-      "sha256": "7462dfd55273e44851ae76301cfbf94c1a270ef69d94267c708e158139fd5a7a",
-      "bytes": 20121
+      "sha256": "6e4155f2b19419229777cb86871abf0e0d8554d97e813f5712e485f9a32530bd",
+      "bytes": 20605
     },
     {
       "path": "dist/network-roles.js",
@@ -112,8 +112,8 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "a5cb92ad71aeb088d323cabf5c3208fed76bf3f2",
-  "presentation": "Exhibition palette, soft cards and aligned straight-arrow relationships in the event guide",
+  "previous_release_commit": "8d2794ed81ed390e6e8238e71468a9a278ce625d",
+  "presentation": "Scroll-shaped activity panels, paper-note relationships and original lotus ornament; aligned straight arrows and exhibition colours",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2
