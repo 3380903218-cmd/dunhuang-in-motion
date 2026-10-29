@@ -1,0 +1,75 @@
+{
+  "version": "1.1.1",
+  "prepared_date": "2026-10-29",
+  "source_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
+  "gephi_nodes": 122,
+  "gephi_edges": 136,
+  "events": 42,
+  "research_sources": 21,
+  "evidence_records": 49,
+  "publication_files": [
+    {
+      "path": "dist/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "dist/app.js",
+      "sha256": "c6793f2fc551d59d31eac243b6ebd1436e4a261d8a0f52ca2f64fad23d3c580c",
+      "bytes": 33699
+    },
+    {
+      "path": "dist/assets/diamond-sutra.jpg",
+      "sha256": "cf7d1ada6833723f207c761450b732314344cde8b45a164ba399578859ecad21",
+      "bytes": 982634
+    },
+    {
+      "path": "dist/assets/dunhuang-network.gexf",
+      "sha256": "edf3f7dd37e31d7f23e500b23d16a438b712574d338e5d0a4bb51baf40714c90",
+      "bytes": 272357
+    },
+    {
+      "path": "dist/assets/favicon.svg",
+      "sha256": "af2ccae30dd8c1dc26ec8cd7c9774d2ea22a063e74715e28129641ce3bde2424",
+      "bytes": 310
+    },
+    {
+      "path": "dist/assets/world.js",
+      "sha256": "2cca0bf60e4bf895ce4a3747e739fad7ae5c615052d27ba05efd72c4a398217f",
+      "bytes": 260393
+    },
+    {
+      "path": "dist/data.js",
+      "sha256": "9a6d8087564ddb9014ac9816d70f0874ef5e133b1b051d1ae8977e7b919bc211",
+      "bytes": 33593
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "e109ecda762a9ff0186ce898777787d3a571a6c14899ce95109b067f095e50ca",
+      "bytes": 15607
+    },
+    {
+      "path": "dist/network-data.js",
+      "sha256": "3751bbc69441afc0a1751ce9dd1054c0dff862aca389fce3c4c2394da5d04c76",
+      "bytes": 224198
+    },
+    {
+      "path": "dist/network.css",
+      "sha256": "040c0291e9b797a2e1fedefa20e2f228784244b5d7a0a6e7b792396312be0596",
+      "bytes": 9872
+    },
+    {
+      "path": "dist/network.js",
+      "sha256": "965a79ec231ecfb1ccfa7593c1b33aee631485fe1e849b98cfb4e6ff7dace9dc",
+      "bytes": 31067
+    },
+    {
+      "path": "dist/style.css",
+      "sha256": "6432128be466330b1774b9e7d89a32442a7e1bc2519d60f03f7660f1046c7add",
+      "bytes": 21561
+    }
+  ],
+  "github_owner": "3380903218-cmd",
+  "github_repository": "dunhuang-in-motion",
+  "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/"
+}
