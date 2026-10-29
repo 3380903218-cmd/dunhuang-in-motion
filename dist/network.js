@@ -23,7 +23,7 @@
   const type=n=>S.lang==='zh'?(typeZH[n.type]||n.type):(typeEN[n.type]||n.type);
   const scope=v=>S.lang==='zh'?(scopeZH[v]||v):v;
   const process=v=>S.lang==='zh'?(processZH[v]||v):v;
-  const relation=e=>(relations[e.attributes.Relation]||[e.label,e.attributes.Role])[S.lang==='zh'?1:0];
+  const relation=e=>window.DUNHUANG_RELATION_TEXT?.(e,S.lang,(relations[e.attributes.Relation]||[e.label,e.attributes.Role])[S.lang==='zh'?1:0])||(relations[e.attributes.Relation]||[e.label,e.attributes.Role])[S.lang==='zh'?1:0];
   const ids=value=>String(value||'').split(';').filter(Boolean);
   const radius=n=>n.size*.6+2;
   // Translate whole disconnected components only. Original coordinates stay intact.
@@ -177,9 +177,10 @@
       if(a.ProcessState)html+=`<span class="net-tag">${esc(process(a.ProcessState))}</span>`;
       if(date)html+=`<h4>${esc(t('date'))}</h4><p class="net-copy">${esc(date)}</p>`;
       if(ev&&(ev.Place||ev.english.place))html+=`<h4>${esc(t('place'))}</h4><p class="net-copy">${esc(S.lang==='zh'?(ev.Place||t('unrecorded')):ev.english.place)}</p>`;
-      if(a.Scope)html+=`<h4>${esc(t('scope'))}</h4><p class="net-copy">${esc(scope(a.Scope))}</p>`;
+      if(a.Scope)html+=`<details class="net-original"><summary>${esc(t('scope'))}</summary><p>${esc(scope(a.Scope))}</p></details>`;
       if(ev)html+=`<h4>${esc(t('reading'))}</h4><p class="net-copy">${esc(S.lang==='zh'?(ev.displayNoteZH||ev.NotesZH):ev.english.note)}</p>`;
       const mapId=ev?.EventId;
+      if(n)html+=`<button class="guide-back-button" id="networkReadGuide">${S.lang==='zh'?'用关系导读查看':'Read this as a relationship guide'}</button>`;
       if(mapId&&window.DUNHUANG_DATA?.flows.some(f=>f.visible&&f.eventIds.includes(mapId)))html+=`<button class="net-mini" id="networkMapEvent" data-event="${esc(mapId)}">${esc(t('map'))}</button>`;
       if(n){
         const related=baseEdges().filter(e=>e.source===n.id||e.target===n.id);
@@ -197,6 +198,7 @@
     box.querySelectorAll('[data-inspect-edge]').forEach(b=>b.addEventListener('click',()=>choose('edge',b.dataset.inspectEdge,false)));
     $('networkClear')?.addEventListener('click',()=>{S.selection=null;S.focus=false;$('networkFocus').checked=false;$('networkFocus').disabled=true;hover=null;renderGraph();renderInspector();});
     $('networkMapEvent')?.addEventListener('click',e=>{if(document.body.classList.contains('network-presenting'))togglePresentation();window.DUNHUANG_EXHIBITION.selectEvent(e.currentTarget.dataset.event);});
+    $('networkReadGuide')?.addEventListener('click',()=>window.DUNHUANG_NETWORK_GUIDE?.show(selection.id));
   }
   function choose(kind,id,recenter){
     S.selection={kind,id};hover=null;$('networkSearchResults').hidden=true;
@@ -204,6 +206,7 @@
     $('networkFocus').disabled=kind!=='node';
     renderGraph();renderInspector();
     if(recenter){const set=new Set([id]);for(const e of baseEdges())if(e.source===id||e.target===id){set.add(e.source);set.add(e.target);}fit(visibleNodes.filter(n=>set.has(n.id)));}
+    window.dispatchEvent(new CustomEvent('dunhuang:network-select',{detail:{kind,id}}));
   }
   function renderSearch(){
     const q=$('networkSearch').value.trim().toLocaleLowerCase();
@@ -268,5 +271,5 @@
     $('networkFocus').disabled=false;$('networkFocus').checked=true;$('networkLabels').checked=false;
     renderText();renderGraph();renderInspector();fit();return true;
   }
-  window.DUNHUANG_NETWORK_VIEW={focusNode,getState:()=>({...S,selection:S.selection?{...S.selection}:null,counts:{nodes:visibleNodes.length,edges:visibleEdges.length},camera:{...camera}}),selectNode:id=>{if(!nodes.has(id))return false;choose('node',id,true);return true;},reset};
+  window.DUNHUANG_NETWORK_VIEW={focusNode,fitVisible:()=>fit(),getState:()=>({...S,selection:S.selection?{...S.selection}:null,counts:{nodes:visibleNodes.length,edges:visibleEdges.length},camera:{...camera}}),selectNode:id=>{if(!nodes.has(id))return false;choose('node',id,true);return true;},selectEdge:id=>{const e=edges.get(id);if(!e)return false;choose('edge',id,false);fit([nodes.get(e.source),nodes.get(e.target)]);return true;},reset};
 })();

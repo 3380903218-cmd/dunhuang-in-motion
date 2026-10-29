@@ -20,7 +20,9 @@ Created for **HY5419 · Digital History, National University of Singapore**, thi
 
 The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a persistent chapter navigation makes the sequence visible, and larger reading text gives the historical argument space before the interactive tools.
 
-The route map opens with one Stein-related journey. The relationship graph opens with Pelliot’s recorded knowledge links; **Open the full network** restores all 122 nodes and 136 relationships. Detailed filters, layout options and methodological notes remain available in expandable sections. Collecting institutions are grouped by London, Paris and Beijing.
+The route map opens with one Stein-related journey. The relationship guide opens with a specific activity: Stein requests a memorandum, Pelliot writes it, and the relevant materials and document are shown alongside their recorded roles. Visitors can choose another activity, inspect its evidence, or open the **Full Gephi network (122)** with all 122 nodes and 136 relationships. Collecting institutions are grouped by London, Paris and Beijing.
+
+![Event-centred relationship guide](docs/images/network-guide.png)
 
 This narrative layout takes inspiration from the cover, chapter navigation and text–visual pacing of [Storying on the Coquille River](https://storymaps.arcgis.com/stories/3678bc6932c74332b0d57adf3434aa55). It uses the project’s existing local assets and research records.
 
@@ -30,6 +32,7 @@ This narrative layout takes inspiration from the cover, chapter navigation and t
 
 - **Historical journeys:** narrative-stage playback, route filters, material and knowledge layers, and clickable evidence.
 - **Interactive Gephi network:** 122 nodes, 136 directed relationships and 42 events; bilingual search, neighbourhood focus, edge inspection and year filtering.
+- **Relationship guide:** full names, explicit roles and event-centred diagrams, with original source/target directions and edge-specific evidence. See [display rules and provenance](docs/RELATIONSHIP_GUIDE.md).
 - **Collections today:** five related institutions across London, Paris and Beijing, with official collection links.
 - **English / 中文:** switches the interface, narrative, network labels and research summaries while preserving selections.
 - **Evidence access:** 21 network source entries and 49 evidence records, including English summaries and the limits of the supporting material.
@@ -43,7 +46,7 @@ The historical case study focuses on **1900–1910**. Current collecting institu
 
 Cases, scrolls, objects, photographs and printed versions are distinct units. A proposed action or recorded promise is not presented as completed movement or cataloguing. Shared attendance at an event does not establish correspondence between every pair of attendees. See [Data and interpretation](DATA_NOTES.md) and the in-page source details.
 
-The default network view translates five disconnected components closer together for readability, retaining positions within each component. Visitors can restore the original Gephi layout. The downloadable GEXF retains the original exported positions, sizes and colours.
+The relationship guide rearranges original links around a selected event. In the full graph, compact view translates five disconnected components closer together for readability, retaining positions within each component. Visitors can restore the original Gephi layout. The downloadable GEXF retains the original exported positions, sizes and colours.
 
 ## Access check
 

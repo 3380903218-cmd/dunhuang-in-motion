@@ -30,6 +30,7 @@
     }
   }
   function syncGuide(){
+    if(window.DUNHUANG_NETWORK_GUIDE){window.DUNHUANG_NETWORK_GUIDE.syncButtons();return;}
     const S=window.DUNHUANG_NETWORK_VIEW.getState();
     if(S.layer==='all'&&!S.focus&&S.until===1910&&S.context)guide='all';
     else if(S.layer!=='Knowledge transmission'||!S.focus||S.selection?.id!==guide)guide=null;
@@ -37,7 +38,8 @@
   }
   document.querySelectorAll('[data-network-guide]').forEach(n=>n.addEventListener('click',()=>{
     guide=n.dataset.networkGuide;
-    if(guide==='all'){window.DUNHUANG_NETWORK_VIEW.reset();guide='all';}
+    if(window.DUNHUANG_NETWORK_GUIDE){window.DUNHUANG_NETWORK_GUIDE.show(guide);}
+    else if(guide==='all'){window.DUNHUANG_NETWORK_VIEW.reset();guide='all';}
     else window.DUNHUANG_NETWORK_VIEW.focusNode(guide);
     document.querySelectorAll('.network-guides [data-network-guide]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.networkGuide===guide)));
     if(n.closest('.document-example'))$('networkShell').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});

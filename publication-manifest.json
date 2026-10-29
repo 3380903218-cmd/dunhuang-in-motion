@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.1.0",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -44,13 +44,28 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "3eb432064b7f5bfd58bcbd2b8e55cbc62593a40f13f4a7494336721338cc03de",
-      "bytes": 24461
+      "sha256": "d24728de2b5d7d2e7d4c2d1b0a834f1e550f19b2e8cea7c30dc80995377006c8",
+      "bytes": 24734
     },
     {
       "path": "dist/network-data.js",
       "sha256": "3751bbc69441afc0a1751ce9dd1054c0dff862aca389fce3c4c2394da5d04c76",
       "bytes": 224198
+    },
+    {
+      "path": "dist/network-guide.css",
+      "sha256": "9f0c2dae619e875eade0f45f5d32900658eb7848082029c9d32ea471937b9645",
+      "bytes": 8806
+    },
+    {
+      "path": "dist/network-guide.js",
+      "sha256": "1c2efac239f1b74ccb5b28b2cc3d87b6bb3ea23b445c69795faf919e36e40d1b",
+      "bytes": 19371
+    },
+    {
+      "path": "dist/network-roles.js",
+      "sha256": "92f9676aea2e06cb8d1068492b78af95fd21cb1959339ce57aa769a263a17053",
+      "bytes": 4511
     },
     {
       "path": "dist/network.css",
@@ -59,8 +74,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "67a99be2babd512630f3bde16b2e9271c436107e763bbdeabca5d3d95844cb0e",
-      "bytes": 31577
+      "sha256": "fdd0af7270e7604a721f24e2d518cd88bd7fe0e0061bce91aadf81dac7adaf27",
+      "bytes": 32258
     },
     {
       "path": "dist/story.css",
@@ -69,8 +84,8 @@
     },
     {
       "path": "dist/story.js",
-      "sha256": "de289e32c3a461b3dc7da80a77a4320fec46d857fc8e54956d072bb70b61453f",
-      "bytes": 4299
+      "sha256": "30682ecada3e5c8f94ceb93f07c20a2195005dff0650b1b4be302fb1813e1de5",
+      "bytes": 4477
     },
     {
       "path": "dist/style.css",
@@ -82,6 +97,6 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "087e9644aa1597db995cb573dd33ea7371798f8e",
-  "presentation": "Three-chapter bilingual story edition; plain-language copy revision"
+  "previous_release_commit": "779525cd9e592e9788e25f47bf47265ca104208a",
+  "presentation": "Event-centred relationship guide with recorded roles; full Gephi graph retained"
 }

@@ -8,7 +8,7 @@ The Gephi snapshot contains **122 nodes, 136 directed relationships, 42 events, 
 
 ## Read the graph carefully
 
-The story edition opens with a guided subset: Pelliot and his immediate knowledge-transmission links (10 nodes, 9 edges). **Open the full network** restores the complete 122-node, 136-edge snapshot. Guided views do not delete records or modify the downloadable GEXF.
+The relationship guide opens with KE007, the inspection memorandum activity (5 nodes and 4 original edges). Pelliot’s nine knowledge-related activities remain selectable. The guide uses only edges directly attached to the chosen event and labels the recorded roles. **Full Gephi network (122)** restores the complete 122-node, 136-edge snapshot. The guide does not create pairwise links between co-participants, delete records or modify the downloadable GEXF. See [guide rules](docs/RELATIONSHIP_GUIDE.md).
 
 - **Positions:** the network is relational, not geographical. Compact view translates disconnected components without creating connecting edges.
 - **Sizes:** relative sizes reflect the connection counts used in the saved Gephi export. They do not rank historical importance.
