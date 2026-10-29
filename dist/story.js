@@ -20,7 +20,6 @@
   function syncText(){
     const lang=language();
     document.querySelectorAll('[data-story-en]').forEach(n=>{n.innerHTML=n.dataset[lang==='zh'?'storyZh':'storyEn'];});
-    document.querySelector('.reading-path').setAttribute('aria-label',lang==='zh'?'阅读章节':'Story chapters');
     document.querySelector('.network-guides').setAttribute('aria-label',lang==='zh'?'网络导读视图':'Guided network views');
     document.querySelector('.map-and-story').setAttribute('aria-label',lang==='zh'?'流转路线导读地图':'Guided route map');
     groupCollections();

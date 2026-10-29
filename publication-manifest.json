@@ -1,5 +1,5 @@
 {
-  "version": "2.3.0",
+  "version": "2.4.0",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -14,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "bec999029ae8a98e0970f8d77f3e7711bacf29d64fd2dd8127ae464b0a34b89c",
-      "bytes": 38306
+      "sha256": "db281b9a09c3b2f27c19482fabb9fe75e737266a648c6057d7a21b6e13e6758a",
+      "bytes": 38720
     },
     {
       "path": "dist/assets/cave16-manuscripts-1907.jpg",
@@ -69,8 +69,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "da17c4b29c1eaba1b93f3ec4b1a81bd4e07683847434b6b2df2cfd587786e35e",
-      "bytes": 33551
+      "sha256": "411cd539f2100c34f25cebe2705446c0f61a69c0bac5247fa6e5c66c5a690caf",
+      "bytes": 33232
     },
     {
       "path": "dist/network-data.js",
@@ -84,8 +84,8 @@
     },
     {
       "path": "dist/network-guide.js",
-      "sha256": "6e4155f2b19419229777cb86871abf0e0d8554d97e813f5712e485f9a32530bd",
-      "bytes": 20605
+      "sha256": "b2a853d4a08520582b21a796cc7db5af764010ab222092068b22fa5565b42170",
+      "bytes": 20639
     },
     {
       "path": "dist/network-roles.js",
@@ -99,8 +99,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "fdd0af7270e7604a721f24e2d518cd88bd7fe0e0061bce91aadf81dac7adaf27",
-      "bytes": 32258
+      "sha256": "bf205405f494ff705bd7575287abba9e9762563dc4f2625e94d52bd5a4435e12",
+      "bytes": 32693
     },
     {
       "path": "dist/preservation-data.js",
@@ -118,14 +118,24 @@
       "bytes": 5441
     },
     {
+      "path": "dist/reading-layout.css",
+      "sha256": "4036507303fa71ea68163d0005d7ccb432634d97afcd23569623ad0e9d961780",
+      "bytes": 11282
+    },
+    {
+      "path": "dist/reading-layout.js",
+      "sha256": "55403b87ac3f1aeabad8fb393cbac16f6fb293df080e49f9a1fdb1399a45b53f",
+      "bytes": 2129
+    },
+    {
       "path": "dist/story.css",
-      "sha256": "c85cefe9c2fc67ccce8d7664b8b0c0f9a4844d8e963ce180482d68abb30b0b68",
-      "bytes": 25835
+      "sha256": "9f6c25c8caffd837a366f3b13b12a83fff34ad3396f87646abaf3af3ce4162a7",
+      "bytes": 25058
     },
     {
       "path": "dist/story.js",
-      "sha256": "30682ecada3e5c8f94ceb93f07c20a2195005dff0650b1b4be302fb1813e1de5",
-      "bytes": 4477
+      "sha256": "57f272c7bc43e80d6812d4e959347652b76cf2c22e973c8583b03209828807e9",
+      "bytes": 4361
     },
     {
       "path": "dist/style.css",
@@ -137,8 +147,8 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "d39098c2b644989c6b7965f5fbd8331edb075d93",
-  "presentation": "Three sourced local photographs of Mogao and the Library Cave, bilingual captions and an accessible image viewer",
+  "previous_release_commit": "32a2ae321a6da4e457b494751d7680290aa54dc2",
+  "presentation": "Single compact chapter navigation, measured anchor offsets, viewport-sized visuals and naturally expanding records",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2,

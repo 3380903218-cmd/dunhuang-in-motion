@@ -193,12 +193,16 @@
       if(a.NotesZH&&!ev)html+=`<details class="net-original"><summary>${esc(t('original'))}</summary><p lang="zh-Hans">${esc(a.NotesZH)}</p></details>`;
       html+=`<p class="net-kicker" style="margin-top:20px">${esc((n||e).id)}</p>`;box.innerHTML=html;
     }
-    box.scrollTop=0;
+    const heading=document.createElement('div'),body=document.createElement('div');heading.className='network-record-heading';body.className='network-record-body';
+    for(const item of [...box.children]){
+      (item.matches('h3,.net-clear,.net-kicker,.net-tag')?heading:body).append(item);
+    }
+    box.replaceChildren(heading,body);
     box.querySelectorAll('[data-inspect-node]').forEach(b=>b.addEventListener('click',()=>choose('node',b.dataset.inspectNode,true)));
     box.querySelectorAll('[data-inspect-edge]').forEach(b=>b.addEventListener('click',()=>choose('edge',b.dataset.inspectEdge,false)));
     $('networkClear')?.addEventListener('click',()=>{S.selection=null;S.focus=false;$('networkFocus').checked=false;$('networkFocus').disabled=true;hover=null;renderGraph();renderInspector();});
     $('networkMapEvent')?.addEventListener('click',e=>{if(document.body.classList.contains('network-presenting'))togglePresentation();window.DUNHUANG_EXHIBITION.selectEvent(e.currentTarget.dataset.event);});
-    $('networkReadGuide')?.addEventListener('click',()=>window.DUNHUANG_NETWORK_GUIDE?.show(selection.id));
+    $('networkReadGuide')?.addEventListener('click',()=>{window.DUNHUANG_NETWORK_GUIDE?.show(selection.id);$('networkShell').scrollIntoView({behavior:'instant',block:'start'});});
   }
   function choose(kind,id,recenter){
     S.selection={kind,id};hover=null;$('networkSearchResults').hidden=true;
@@ -235,8 +239,8 @@
     renderText();renderGraph();renderInspector();fit();
   }
   function togglePresentation(){
-    const active=document.body.classList.toggle('network-presenting');$('networkPresent').textContent=t(active?'exit':'present');
-    if(active)$('network').scrollIntoView({behavior:'instant'});requestAnimationFrame(()=>fit());
+    const active=document.body.classList.toggle('network-presenting');window.DUNHUANG_READING_LAYOUT?.refresh();$('networkPresent').textContent=t(active?'exit':'present');
+    if(active)$('networkShell').scrollIntoView({behavior:'instant'});requestAnimationFrame(()=>fit());
   }
   document.querySelectorAll('[data-network-layer]').forEach(b=>b.addEventListener('click',()=>{S.layer=b.dataset.networkLayer;filterChanged();}));
   $('networkCompact').addEventListener('change',e=>{S.compact=e.target.checked;renderText();renderGraph();fit();});

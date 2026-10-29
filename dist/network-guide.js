@@ -112,11 +112,12 @@
     const state=ev.ProcessState==='Proposal made'?'proposal':ev.ProcessState==='Recorded promise'?'promise':ev.ProcessState==='Work in progress'?'ongoing':'action';
     const summary=lead[ev.EventId]?.[language()==='zh'?1:0]||evNote(ev);
     panel.setAttribute('aria-label',t('guide'));
-    panel.innerHTML=`<header class="guide-header"><div><p class="guide-small-title">${esc(t('guide'))} · ${esc(t('record'))} ${at+1} ${esc(t('of'))} ${options.length}</p><h3>${esc(label(N.get(ev.EventId)))}</h3><p class="guide-lead">${esc(summary)}</p></div><div class="guide-selector"><label for="guideEvent">${esc(t('choose'))}</label><select id="guideEvent">${options.map(id=>`<option value="${esc(id)}"${id===G.eventId?' selected':''}>${esc(label(N.get(id)))}</option>`).join('')}</select><div class="guide-paging"><button data-guide-step="-1"${at===0?' disabled':''}>← ${esc(t('previous'))}</button><button data-guide-step="1"${at===options.length-1?' disabled':''}>${esc(t('next'))} →</button></div></div></header>
-    <div class="guide-reading"><p>${esc(t('read'))}</p><span>${nodeCount} ${esc(t('nodes'))} · ${edges.length} ${esc(t('relations'))}${shown.length+outgoing.length<edges.length?' · '+(language()==='zh'?'当前显示 ':'shown ')+(shown.length+outgoing.length):''}</span></div>
+    panel.innerHTML=`<header class="guide-header"><div><p class="guide-small-title">${esc(t('guide'))} · ${esc(t('record'))} ${at+1} ${esc(t('of'))} ${options.length}</p></div><div class="guide-selector"><label for="guideEvent">${esc(t('choose'))}</label><select id="guideEvent">${options.map(id=>`<option value="${esc(id)}"${id===G.eventId?' selected':''}>${esc(label(N.get(id)))}</option>`).join('')}</select><div class="guide-paging"><button data-guide-step="-1"${at===0?' disabled':''}>← ${esc(t('previous'))}</button><button data-guide-step="1"${at===options.length-1?' disabled':''}>${esc(t('next'))} →</button></div></div></header>
+
     <div class="relation-diagram"><section class="guide-inputs"><h4><span>1</span>${esc(t('inputs'))}</h4><div class="relation-cards">${shown.map(e=>nodeCard(e,true)).join('')||`<p class="guide-no-record">${esc(t('noInputs'))}</p>`}</div>${incoming.length>6?`<button class="guide-expand" data-guide-expand>${esc(G.expanded?t('fewer'):t('more'))}${G.expanded?'':' ('+(incoming.length-6)+')'}</button>`:''}</section>
     <section class="guide-activity"><h4><span>2</span>${esc(t('event'))}</h4><article class="activity-card ${state}"><p class="activity-layer">${esc(t(ev.Layer==='Physical circulation'?'material':'knowledge'))}</p><p class="activity-state">${esc(t(state))}</p>${lotus}<h5>${esc(label(N.get(ev.EventId)))}</h5><p class="activity-date">${esc(evDate(ev))}</p><p class="activity-place">${esc(evPlace(ev))}</p>${ev.Scope!=='Dunhuang materials'?`<p class="activity-scope">${esc(t('scope'))}</p>`:''}</article></section>
     <section class="guide-outputs"><h4><span>3</span>${esc(t('outputs'))}</h4><div class="relation-cards">${outgoing.map(e=>nodeCard(e,false)).join('')||`<p class="guide-no-record">${esc(t('noOutputs'))}</p>`}</div></section></div>
+    <p class="guide-lead guide-context">${esc(summary)}</p><div class="guide-reading"><p>${esc(t('read'))}</p><span>${nodeCount} ${esc(t('nodes'))} · ${edges.length} ${esc(t('relations'))}${shown.length+outgoing.length<edges.length?' · '+(language()==='zh'?'当前显示 ':'shown ')+(shown.length+outgoing.length):''}</span></div>
     <p class="guide-card-help">${esc(t('inspect'))}</p>${proofHTML(ev)}<p class="guide-arrangement">${esc(t('arrangement'))}</p>`;
     $('guideEvent').addEventListener('change',e=>{G.eventId=e.target.value;G.edgeId=null;G.expanded=false;render();$('guideEvent').focus({preventScroll:true});});
     panel.querySelectorAll('[data-guide-step]').forEach(b=>b.addEventListener('click',()=>{G.eventId=options[at+Number(b.dataset.guideStep)];G.edgeId=null;G.expanded=false;render();}));
@@ -126,7 +127,7 @@
     }));
     panel.querySelector('[data-guide-expand]')?.addEventListener('click',()=>{G.expanded=!G.expanded;render();});
     panel.querySelector('[data-guide-full]')?.addEventListener('click',()=>{
-      const edge=G.edgeId;mode('graph');api.reset();syncButtons();requestAnimationFrame(()=>edge?api.selectEdge(edge):api.selectNode(G.eventId));
+      const edge=G.edgeId;mode('graph');api.reset();syncButtons();requestAnimationFrame(()=>{edge?api.selectEdge(edge):api.selectNode(G.eventId);shell.scrollIntoView({block:'start',behavior:'instant'});});
     });
     panel.querySelector('[data-guide-map]')?.addEventListener('click',()=>window.DUNHUANG_EXHIBITION.selectEvent(G.eventId));
     syncButtons();

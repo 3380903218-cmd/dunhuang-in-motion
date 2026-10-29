@@ -18,7 +18,7 @@ Created for **HY5419 · Digital History, National University of Singapore**, thi
 
 ## Read the story
 
-The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a persistent chapter navigation makes the sequence visible, and larger reading text gives the historical argument space before the interactive tools.
+The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a single compact chapter navigation links directly to each workspace, and larger reading text gives the historical argument space before the interactive tools.
 
 The route map opens with one Stein-related journey. The relationship guide opens with a specific activity: Stein requests a memorandum, Pelliot writes it, and the relevant materials and document are shown alongside their recorded roles. Visitors can choose another activity, inspect its evidence, or open the **Full Gephi network (122)** with all 122 nodes and 136 relationships. Collecting institutions are grouped by London, Paris and Beijing.
 
@@ -107,4 +107,6 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 点击顶部 **Network／传播网络** 可搜索人物、查看关系和证据，并切换传播层或年份。点击已匹配的事件，可跳回路线地图。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
 
-Website release **v2.3.0 · 29 October 2026**.
+Website release **v2.4.0 · 29 October 2026**.
+
+Layout 2.4 uses the available browser height for maps and the full Gephi plot. Time controls sit above the route map; record descriptions and evidence expand below each visual in normal document flow. The duplicate introductory chapter menu has been removed. See [layout rules](docs/READING_LAYOUT.md).

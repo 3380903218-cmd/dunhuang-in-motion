@@ -1,5 +1,5 @@
 {
-  "version": "2.2.3",
+  "version": "2.4.0",
   "checks": [
     {
       "name": "default activity 320/zh",

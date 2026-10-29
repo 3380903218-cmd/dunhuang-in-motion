@@ -190,7 +190,11 @@
       if(state.view==='holdings')html+=visibleInstitutions().map(i=>`<button class="institution-mini" data-institution="${i.id}">${esc(tr(i.name))}<small>${esc(tr(places.get(i.city).name))} · ${esc(i.short)}</small></button>`).join('');
     }
     $('storyPanel').innerHTML=html;
-    $('storyPanel').scrollTop=0;
+    const heading=document.createElement('div'),body=document.createElement('div');heading.className='story-record-heading';body.className='story-record-body';
+    for(const item of [...$('storyPanel').children]){
+      (item.matches('h3,.story-back,.story-kicker,.story-year,.detail-label,.detail-date')?heading:body).append(item);
+    }
+    $('storyPanel').replaceChildren(heading,body);
     $('storyPanel').querySelector('[data-back]')?.addEventListener('click',()=>{state.selection=null;render();});
     $('storyPanel').querySelectorAll('[data-institution]').forEach(n=>n.addEventListener('click',()=>selectInstitution(n.dataset.institution,false)));
     $('storyPanel').querySelectorAll('[data-flow-button]').forEach(n=>n.addEventListener('click',()=>{state.selection={type:'flow',id:n.dataset.flowButton};render();}));
@@ -223,7 +227,7 @@
     $('yearButtons').innerHTML=D.chapters.map((c,i)=>`<button data-stage="${i}" aria-label="${esc((i===5?t('now'):c.year)+' '+chapterTitle(i))}">${i===5?esc(t('now')):esc(c.year)}</button>`).join('');
     $('yearButtons').querySelectorAll('button').forEach(n=>n.addEventListener('click',()=>{pause();setStage(Number(n.dataset.stage));}));
     $('chapterGrid').innerHTML=D.chapters.map((c,i)=>`<button class="chapter-card" data-stage="${i}"><span>${i===5?esc(t('now')):esc(c.year)}</span><b>${esc(chapterTitle(i))}</b><small>0${i+1} <span aria-hidden="true">↗</span></small></button>`).join('');
-    $('chapterGrid').querySelectorAll('button').forEach(n=>n.addEventListener('click',()=>{pause();setStage(Number(n.dataset.stage));$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});}));
+    $('chapterGrid').querySelectorAll('button').forEach(n=>n.addEventListener('click',()=>{pause();setStage(Number(n.dataset.stage));$('exhibition').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});}));
   }
   function render(){
     $('historyView').classList.toggle('active',state.view==='history');$('holdingsView').classList.toggle('active',state.view==='holdings');
@@ -239,12 +243,12 @@
   function pause(){clearInterval(clock);clock=null;state.playing=false;}
   function startClock(){clearInterval(clock);clock=setInterval(()=>{if(state.stage>=5){pause();render();return;}setStage(state.stage+1);if(state.stage===5){pause();render();}},6500/state.speed);}
   function play(){if(state.playing){pause();render();return;}if(state.stage>=4)state.stage=0;state.view='history';state.selection=null;state.playing=true;render();home();startClock();}
-  function selectInstitution(id,scroll){pause();const institution=D.institutions.find(i=>i.id===id);state.view='holdings';state.stage=5;state.route='all';state.selection={type:'institution',id};render();fitCamera([institution.city],true);if(scroll)$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});}
+  function selectInstitution(id,scroll){pause();const institution=D.institutions.find(i=>i.id===id);state.view='holdings';state.stage=5;state.route='all';state.selection={type:'institution',id};render();fitCamera([institution.city],true);if(scroll)$('exhibition').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});}
   function toast(text){clearTimeout(toastClock);$('toast').textContent=text;$('toast').hidden=false;toastClock=setTimeout(()=>$('toast').hidden=true,3500);}
-  function togglePresentation(){const active=document.body.classList.toggle('presenting');$('presentation').textContent=t(active?'exitPresent':'present');toast(t(active?'exitHint':'returned'));if(active)$('explore').scrollIntoView({behavior:'instant'});requestAnimationFrame(()=>home(false));}
+  function togglePresentation(){const active=document.body.classList.toggle('presenting');window.DUNHUANG_READING_LAYOUT?.refresh();$('presentation').textContent=t(active?'exitPresent':'present');toast(t(active?'exitHint':'returned'));if(active)$('exhibition').scrollIntoView({behavior:'instant'});requestAnimationFrame(()=>home(false));}
   $('lang').addEventListener('click',()=>{state.lang=state.lang==='zh'?'en':'zh';renderStaticContent();render();window.dispatchEvent(new CustomEvent('dunhuang:language',{detail:{lang:state.lang}}));});
   $('play').addEventListener('click',play);
-  $('startJourney')?.addEventListener('click',()=>{pause();state.stage=0;state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;play();$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});
+  $('startJourney')?.addEventListener('click',()=>{pause();state.stage=0;state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;play();$('exhibition').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});
   $('speed').addEventListener('click',()=>{state.speed=state.speed===1?1.5:state.speed===1.5?2:1;$('speed').textContent=state.speed+'×';if(state.playing)startClock();});
   $('yearSlider').addEventListener('input',e=>{pause();setStage(Number(e.target.value));});
   $('historyView').addEventListener('click',()=>{pause();state.view='history';if(state.stage===5)state.stage=4;state.selection=null;render();home();});
@@ -266,5 +270,5 @@
   const jsonBlob=new Blob([JSON.stringify(D,null,2)],{type:'application/json;charset=utf-8'});$('downloadData').href=URL.createObjectURL(jsonBlob);
   buildGeography();renderStaticContent();render();fitCamera([...new Set(visibleFlows().flatMap(f=>[f.fromId,f.toId]))],false);
   // Useful for a repeatable presentation and browser verification. No network API.
-  window.DUNHUANG_EXHIBITION={selectEvent:id=>{const flow=D.flows.find(f=>f.visible&&f.eventIds.includes(id));if(!flow)return false;pause();state.stage=4;state.view='history';state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;state.selection={type:'flow',id:flow.id};render();home(false);$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});return true;},getState:()=>({...state}),restart:()=>{pause();state.stage=0;state.route='all';play();}};
+  window.DUNHUANG_EXHIBITION={selectEvent:id=>{const flow=D.flows.find(f=>f.visible&&f.eventIds.includes(id));if(!flow)return false;pause();state.stage=4;state.view='history';state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;state.selection={type:'flow',id:flow.id};render();home(false);$('exhibition').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});return true;},getState:()=>({...state}),restart:()=>{pause();state.stage=0;state.route='all';play();}};
 })();
