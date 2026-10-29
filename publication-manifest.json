@@ -1,5 +1,5 @@
 {
-  "version": "2.2.3",
+  "version": "2.3.0",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -18,6 +18,16 @@
       "bytes": 38306
     },
     {
+      "path": "dist/assets/cave16-manuscripts-1907.jpg",
+      "sha256": "49c2f3452a0bd8e1ad7fd0fb8e514c0e52a3a21cfecf0ff10a63f4e5d92b9842",
+      "bytes": 138419
+    },
+    {
+      "path": "dist/assets/cave17-pelliot-1908.jpg",
+      "sha256": "f9ea194e15a8717a2d3b92dbc1e4d2a0507ea31b859e61bd4b4878dbdd528740",
+      "bytes": 123437
+    },
+    {
       "path": "dist/assets/diamond-sutra.jpg",
       "sha256": "cf7d1ada6833723f207c761450b732314344cde8b45a164ba399578859ecad21",
       "bytes": 982634
@@ -33,9 +43,24 @@
       "bytes": 310
     },
     {
+      "path": "dist/assets/mogao-exterior-2006.jpg",
+      "sha256": "295670e889cdcc29f5b3c17644269835759ff0470bce1869960279e57e04aebf",
+      "bytes": 397790
+    },
+    {
       "path": "dist/assets/world.js",
       "sha256": "2cca0bf60e4bf895ce4a3747e739fad7ae5c615052d27ba05efd72c4a398217f",
       "bytes": 260393
+    },
+    {
+      "path": "dist/cave-photographs.css",
+      "sha256": "7ea8839bcccea55f39e4bdc1fd3e36a0ff80a9d962fdbdb53210dd8a7e017fbd",
+      "bytes": 4655
+    },
+    {
+      "path": "dist/cave-photographs.js",
+      "sha256": "35f05e2d73220a466a7c6804a0bea6379c61f7eab7513ad66d2a69e1ff7b9f6e",
+      "bytes": 2652
     },
     {
       "path": "dist/data.js",
@@ -44,8 +69,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "2c27d43278a4955dd19bd9d0cca84c9e50be39da36bf2bd17c2859963315f1a4",
-      "bytes": 25499
+      "sha256": "da17c4b29c1eaba1b93f3ec4b1a81bd4e07683847434b6b2df2cfd587786e35e",
+      "bytes": 33551
     },
     {
       "path": "dist/network-data.js",
@@ -112,9 +137,10 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "8d2794ed81ed390e6e8238e71468a9a278ce625d",
-  "presentation": "Scroll-shaped activity panels, paper-note relationships and original lotus ornament; aligned straight arrows and exhibition colours",
+  "previous_release_commit": "d39098c2b644989c6b7965f5fbd8331edb075d93",
+  "presentation": "Three sourced local photographs of Mogao and the Library Cave, bilingual captions and an accessible image viewer",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
-  "preservation_history_examples": 2
+  "preservation_history_examples": 2,
+  "additional_photographs": 3
 }

@@ -33,6 +33,7 @@ This narrative layout takes inspiration from the cover, chapter navigation and t
 - **Historical journeys:** narrative-stage playback, route filters, material and knowledge layers, and clickable evidence.
 - **Interactive Gephi network:** 122 nodes, 136 directed relationships and 42 events; bilingual search, neighbourhood focus, edge inspection and year filtering.
 - **Relationship guide:** full names, explicit roles and event-centred diagrams, with original source/target directions and edge-specific evidence. See [display rules and provenance](docs/RELATIONSHIP_GUIDE.md).
+- **Cave photographs:** three locally hosted, credited images between the narrative chapters, with bilingual captions and a keyboard-accessible viewer.
 - **Collections today:** five related institutions across London, Paris and Beijing, with official collection links. The preservation section compares three dated treatment examples, with two further studies of fragmentation and rebinding; see [sources and boundaries](docs/PRESERVATION.md).
 - **English / 中文:** switches the interface, narrative, network labels and research summaries while preserving selections.
 - **Evidence access:** 21 network source entries and 49 evidence records, including English summaries and the limits of the supporting material.
@@ -106,4 +107,4 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 点击顶部 **Network／传播网络** 可搜索人物、查看关系和证据，并切换传播层或年份。点击已匹配的事件，可跳回路线地图。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
 
-Website release **v2.2.3 · 29 October 2026**.
+Website release **v2.3.0 · 29 October 2026**.

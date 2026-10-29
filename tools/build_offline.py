@@ -19,7 +19,11 @@ scripts='\n'.join((dist/urllib.parse.urlsplit(ref).path).read_text(encoding='utf
 if args.lang=='zh':
     scripts=scripts.replace("new URLSearchParams(window.location.search).get('lang')==='zh'?'zh':'en'","'zh'",1)
 html=html.replace('</body>','<script>'+scripts.replace('</script','<\\/script')+'</script>\n</body>')
-for name,mime in [('assets/diamond-sutra.jpg','image/jpeg'),('assets/dunhuang-network.gexf','application/gexf+xml')]:
+# Inline every local raster image used by HTML, including narrative photographs.
+rasters=sorted(set(re.findall(r'(?:src|href)="(assets/[^"?]+\.(?:jpg|jpeg|png|webp))"',html)))
+for name in rasters+['assets/dunhuang-network.gexf']:
+    suffix=Path(name).suffix.lower()
+    mime={'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gexf':'application/gexf+xml'}[suffix]
     html=html.replace(name,'data:'+mime+';base64,'+base64.b64encode((dist/name).read_bytes()).decode())
 html=html.replace('assets/favicon.svg','data:image/svg+xml,'+urllib.parse.quote((dist/'assets/favicon.svg').read_text(encoding='utf-8'),safe=''))
 args.output.parent.mkdir(parents=True,exist_ok=True)

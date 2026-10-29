@@ -25,3 +25,12 @@ Publication of this repository does not change the rights in cited scholarship, 
 
 
 Relationship-guide ornament: original inline vector lotus drawing and CSS paper/scroll details, created for this exhibition (release 2.2.3). These decorative details carry no manuscript-condition or provenance meaning.
+
+
+## Mogao and Library Cave photographs (2.3.0)
+
+- **mogao-2006**, Yaohua2000 (Yáo Zǐyuān) / Wikimedia Commons, 2006-04-24. [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). [Image record](https://commons.wikimedia.org/wiki/File:Mogao_Caves.jpg). Local file: `dist/assets/mogao-exterior-2006.jpg`. Cave 96 pavilion and Mogao cliff face; site context, not a view of Cave 17. No changes to image bytes.
+- **cave17-1908**, Charles Nouette (1869–1910), Musée Guimet / Wikimedia Commons, 1908. [Public domain; Commons PD-old / PDM](https://creativecommons.org/publicdomain/mark/1.0/). [Image record](https://commons.wikimedia.org/wiki/File:Paul_Pelliot_examining_manuscripts_in_Cave_17_at_Mogao_Caves_in_1908.jpg). Local file: `dist/assets/cave17-pelliot-1908.jpg`. Pelliot examining manuscripts inside Cave 17. No changes to image bytes.
+- **cave16-1907**, Aurel Stein (1862–1943) / Wikimedia Commons, 1907 negatives. [Public domain; Commons PD-1923 and corroborating PD-old file](https://creativecommons.org/publicdomain/mark/1.0/). [Image record](https://commons.wikimedia.org/wiki/File:Dunhuang_Cave_16.jpg). Local file: `dist/assets/cave16-manuscripts-1907.jpg`. Historic composite showing Cave 16 and manuscript bundles near Cave 17 entrance. No changes to image bytes.
+
+The Cave 16 picture combines two historical negatives; this is identified in the in-page caption. See [Foong Ping, Fig. 1](https://silkroadsarchaeoheritage.org/articles/10.5334/srah.7#F1). The exterior photograph depicts the Cave 96 pavilion and is labelled as site context. All photographs remain local assets and are embedded in the offline editions.
