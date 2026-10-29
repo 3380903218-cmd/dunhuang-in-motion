@@ -36,6 +36,6 @@ This release does not change `data.js`, `network-data.js` or the downloadable GE
 `relation-guide-verification.json` records checks across 320, 390, 768, 1024 and 1440 pixel widths in both languages. All 42 event projections are compared against the original edge endpoints. Checks also cover selected-edge evidence, keyboard operation, language retention, proposal status, eighteen banquet attendees, telegram direction, route-map linking, global search and both full-network layers.
 
 
-## Exhibition styling (2.2.1)
+## Exhibition styling (2.2.2)
 
-The guide uses muted sage, ochre and brown, with a parchment activity panel. Thin translucent borders and softly rounded cards replace the heavy node-colour stripes. Connections use thin curved strokes and open arrowheads; a selected card and its connection use the site’s terracotta accent. Keyboard focus remains distinct. These are display-only colours: the original Gephi node/edge colours, research snapshot, directions and downloadable GEXF are unchanged.
+The guide uses muted sage, ochre and brown, with a parchment activity panel. Thin translucent borders and softly rounded cards replace the heavy node-colour stripes. Cards are vertically centred within the three columns. Connections use thin straight strokes and open arrowheads; a selected card and its connection use the site’s terracotta accent. Keyboard focus remains distinct. These are display-only colours: the original Gephi node/edge colours, research snapshot, directions and downloadable GEXF are unchanged.

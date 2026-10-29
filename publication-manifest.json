@@ -1,5 +1,5 @@
 {
-  "version": "2.2.1",
+  "version": "2.2.2",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -44,7 +44,7 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "9a2187258f7ae687e2cc352a80847fc7a7761029db1626635f160d58ca002e96",
+      "sha256": "0cbb2dbb7a1d50fca795e4a8065f53a68ed834a8fc4eb66c3c2546003812f7c3",
       "bytes": 25499
     },
     {
@@ -54,13 +54,13 @@
     },
     {
       "path": "dist/network-guide.css",
-      "sha256": "0b18903ead0070b89227807a31206afeefb8de869b37798ff3d8a58a69c74d8f",
-      "bytes": 9031
+      "sha256": "6cbb18dfa30bacd7c54488992bfcc017deac06a514f099defce2f7e0d2843504",
+      "bytes": 9483
     },
     {
       "path": "dist/network-guide.js",
-      "sha256": "ef2de34c6117aa7f3bbd896f33a31149f3e1aadf2fb671638c9255f9fa74682d",
-      "bytes": 20179
+      "sha256": "7462dfd55273e44851ae76301cfbf94c1a270ef69d94267c708e158139fd5a7a",
+      "bytes": 20121
     },
     {
       "path": "dist/network-roles.js",
@@ -112,8 +112,8 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "ca3f6756547b1b9620e68919e095af2202d455f4",
-  "presentation": "Exhibition palette, soft card edges and fine open-arrow connectors in relationship guide; preservation evidence retained",
+  "previous_release_commit": "a5cb92ad71aeb088d323cabf5c3208fed76bf3f2",
+  "presentation": "Exhibition palette, soft cards and aligned straight-arrow relationships in the event guide",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2

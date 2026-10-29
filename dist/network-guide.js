@@ -89,10 +89,11 @@
         const marker=document.createElementNS(NS,'marker'),id='guide-arrow-'+(incoming?'in':'out')+'-'+i;
         for(const [k,v] of Object.entries({id,viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:10,markerHeight:10,markerUnits:'userSpaceOnUse',orient:'auto'}))marker.setAttribute(k,v);
         const tip=document.createElementNS(NS,'path');tip.setAttribute('d','M3 2L8 5L3 8');tip.setAttribute('fill','none');tip.setAttribute('stroke',color);tip.setAttribute('stroke-width',selected?'1.8':'1.3');tip.setAttribute('stroke-linecap','round');tip.setAttribute('stroke-linejoin','round');marker.append(tip);defs.append(marker);
-        const a=incoming?[r.right-bounds.left+3,r.top+r.height/2-bounds.top]:[box.right-bounds.left+3,box.top+box.height*(i+1)/(cards.length+1)-bounds.top];
-        const b=incoming?[box.left-bounds.left-6,box.top+box.height*(i+1)/(cards.length+1)-bounds.top]:[r.left-bounds.left-6,r.top+r.height/2-bounds.top];
-        const gap=(b[0]-a[0])*.55,p=document.createElementNS(NS,'path');
-        p.setAttribute('d',`M${a[0]},${a[1]} C${a[0]+gap},${a[1]} ${b[0]-gap},${b[1]} ${b[0]},${b[1]}`);
+        const cardY=r.top+r.height/2-bounds.top,activityY=Math.max(box.top-bounds.top+18,Math.min(box.bottom-bounds.top-18,cardY));
+        const a=incoming?[r.right-bounds.left+3,cardY]:[box.right-bounds.left+3,activityY];
+        const b=incoming?[box.left-bounds.left-6,activityY]:[r.left-bounds.left-6,cardY];
+        const p=document.createElementNS(NS,'path');
+        p.setAttribute('d',`M${a[0]},${a[1]} L${b[0]},${b[1]}`);
         p.setAttribute('fill','none');p.setAttribute('stroke',color);p.setAttribute('stroke-width',selected?'1.9':'1.3');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');p.setAttribute('marker-end',`url(#${id})`);p.dataset.guideConnector=edge.id;
         if(['Proposal made','Recorded promise'].includes(edge.attributes.ProcessState))p.setAttribute('stroke-dasharray','5 4');
         svg.append(p);
