@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "prepared_date": "2026-10-29",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -44,8 +44,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "d24728de2b5d7d2e7d4c2d1b0a834f1e550f19b2e8cea7c30dc80995377006c8",
-      "bytes": 24734
+      "sha256": "041d2d00f08ca89aaaed1d86decf946a052fddb84d155210f356bf6f23dea781",
+      "bytes": 25499
     },
     {
       "path": "dist/network-data.js",
@@ -78,6 +78,21 @@
       "bytes": 32258
     },
     {
+      "path": "dist/preservation-data.js",
+      "sha256": "531a551dfc8ee4a4cbb370bb5ae9e6da16bce4ad936e995607afed5d29d5ddd5",
+      "bytes": 8180
+    },
+    {
+      "path": "dist/preservation.css",
+      "sha256": "3e47dc80398c9225e1a68482b5f371094ecea0054d25875aab14c1f629f18c25",
+      "bytes": 5763
+    },
+    {
+      "path": "dist/preservation.js",
+      "sha256": "890b142f9432cfcdc8c527cb821f5184b9f1150c4e9a7e599d5bc9cb67e96d02",
+      "bytes": 5441
+    },
+    {
       "path": "dist/story.css",
       "sha256": "c85cefe9c2fc67ccce8d7664b8b0c0f9a4844d8e963ce180482d68abb30b0b68",
       "bytes": 25835
@@ -97,6 +112,9 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "779525cd9e592e9788e25f47bf47265ca104208a",
-  "presentation": "Event-centred relationship guide with recorded roles; full Gephi graph retained"
+  "previous_release_commit": "335cb7545e77ef00ac2fe66383f668aab469f4a1",
+  "presentation": "Dated preservation records and manuscript completeness examples added to collecting institutions; event-centred Gephi guide retained",
+  "preservation_sources": 6,
+  "preservation_treatment_examples": 3,
+  "preservation_history_examples": 2
 }

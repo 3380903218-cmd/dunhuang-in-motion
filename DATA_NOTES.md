@@ -29,3 +29,8 @@ The website links to institutional collection pages. An institution holding an o
 ## Updating the exhibition
 
 The original evidence workbooks and source PDFs remain in the research workspace. To update this public snapshot, export the reviewed data and Gephi graph there, carry the resulting public files into `dist/`, update the source hashes, run `python3 tools/verify_static.py`, and check both language views and the GitHub project subpath before publication. Do not replace qualified historical dates with invented exact dates.
+
+
+## Preservation and completeness (2.2)
+
+Six dated references support the separate preservation section. Paper condition, textual completeness, historical rebinding, catalogue units and image legibility are distinguished. Examples from 2009–2025 are not presented as a synchronous 2026 survey or an institutional ranking. See [the claim matrix and limits](docs/PRESERVATION.md). The Gephi and historical route snapshots remain unchanged.
