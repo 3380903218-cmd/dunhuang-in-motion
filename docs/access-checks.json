@@ -10,5 +10,6 @@
     "relationship network loads"
   ],
   "source": "Project owner reported that family in China could open the page, map and relationship network.",
-  "verification_boundary": "This records the reported test session; external reference websites and other mainland networks were not tested in this report."
+  "verification_boundary": "This records the reported test session; external reference websites and other mainland networks were not tested in this report.",
+  "release_observed": "1.1.1 (before the story-edition redesign)"
 }

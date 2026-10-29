@@ -6,7 +6,7 @@
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const SVG = 'http://www.w3.org/2000/svg';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const state = {lang:new URLSearchParams(window.location.search).get('lang')==='zh'?'zh':'en',stage:4,view:'history',route:'all',material:true,knowledge:true,playing:false,speed:1,selection:null};
+  const state = {lang:new URLSearchParams(window.location.search).get('lang')==='zh'?'zh':'en',stage:4,view:'history',route:'stein',material:true,knowledge:true,playing:false,speed:1,selection:null};
   const colors = {stein:'#e6b878',pelliot:'#7fc3b8',qing:'#d88f78',knowledge:'#acc2e1'};
   const places = new Map(D.places.map(p => [p.id,p]));
   let clock = null, cameraFrame = 0, toastClock = null;
@@ -27,6 +27,13 @@
     artifactAlt:'Frontispiece and text of the Diamond Sutra, dated 868. British Library, Or.8210/P.2.',mapTitleA11y:'Interactive map of Dunhuang manuscript journeys',mapDesc:'Select a place or connection for details. The relationship list below provides the same information without using the map.',
     noScript:'The interactive map requires JavaScript. Enable it and reload, or consult the project reading guide for collection and source references.'
   });
+  Object.assign(strings.en,{hero:'The journeys of<br>Dunhuang manuscripts.',mapKicker:'CHAPTER 01 / MATERIAL CIRCULATION',mapTitle:'How did the manuscripts move?',collectionKicker:'CHAPTER 03 / COLLECTIONS TODAY',collectionsTitle:'Where are they now?',sourcesKicker:'SOURCES & METHOD',skip:'Skip to the story',start:'Play from 1900',navMap:'The journeys'});
+  Object.assign(strings.zh,{hero:'敦煌文献，<br>如何走向世界？',mapKicker:'第一章 / 实物流转',mapTitle:'文献沿着哪些线索流转？',collectionKicker:'第三章 / 今日馆藏',collectionsTitle:'它们今天在哪里？',sourcesKicker:'史料与方法',skip:'跳至正文',start:'从1900年开始播放',navMap:'文献的流转'});
+  const routeStories={
+    stein:{year:'1907–1909',title:{en:'Acquisition, transport and a London destination',zh:'从取得、转运，到伦敦'},text:{en:'Follow the Stein-related cargo from Mogao through Anxi and Xinjiang, then to London. The records involve negotiations, carriers and correspondence alongside Stein himself.',zh:'沿着斯坦因相关批次，从莫高窟，经安西、新疆，追踪至伦敦。史料中不只有斯坦因，还有交涉、驮运者与往来书信。'},help:{en:'Start at Mogao, then select a line. Each connection has its own date and source; the curves are not a reconstructed travel itinerary.',zh:'从莫高窟出发，点击一段连线。每条关系都有各自的时间与来源；曲线不复原完整的实际行程。'}},
+    pelliot:{year:'1908–1910',title:{en:'One cargo, several stages of arrival',zh:'同一批材料，不同的抵达阶段'},text:{en:'Pelliot’s main expedition cargo moved towards Lanzhou, Xi’an, Zhengzhou and Shanghai before Paris. Its arrival in Paris in 1909 is separate from manuscript entry into the BnF department in 1910.',zh:'伯希和考察队主批经兰州、西安、郑州与上海，转往巴黎。1909年主批抵达巴黎，与1910年写本进入法国国家图书馆写本部，是不同阶段。'},help:{en:'Follow the cargo rather than assuming that every manuscript travelled with Pelliot. Select a connection to see the evidence and its limits.',zh:'追踪物的行程，不预设每件写本都与伯希和同行。点击连线，查看史料依据与它的限度。'}},
+    qing:{year:'1909–1910',title:{en:'A message first. A transfer later.',zh:'先是消息，随后是运送'},text:{en:'The 1909 ministry telegram from Beijing to Lanzhou belongs to administrative communication. The Qing-organised transfer to Beijing in 1910 belongs to material circulation. They are related, but record different actions.',zh:'1909年北京发往兰州的学部电报属于行政通信；1910年清政府组织的运京属于实物流转。两者相互联系，却记录着不同性质的行动。'},help:{en:'Read the arrow direction and the layer together. A communication link is not a shipment.',zh:'将箭头方向与图层含义一起阅读。通信的连线不代表实物运输。'}}
+  };
   const t = k => strings[state.lang][k] ?? k;
   const tr = v => typeof v === 'object' ? (v[state.lang] ?? v.zh ?? '') : v;
   function el(tag, attrs={}, parent) {
@@ -47,8 +54,16 @@
     const u=mapUnit();
     document.querySelectorAll('.node-dot').forEach(n=>n.setAttribute('r',u*Number(n.dataset.pixels||4)));
     document.querySelectorAll('.origin-ring').forEach(n=>n.setAttribute('r',u*12));
-    document.querySelectorAll('.map-label').forEach(n=>{n.setAttribute('font-size',u*(n.classList.contains('sub-label')?8:11));n.setAttribute('dx',u*Number(n.dataset.dx||9));n.setAttribute('dy',u*Number(n.dataset.dy||4));});
-    document.querySelectorAll('.geo-label').forEach(n=>n.setAttribute('font-size',u*11));
+    document.querySelectorAll('.map-label').forEach(n=>{
+      const px=n.classList.contains('sub-label')?12:14;
+      const width=[...n.textContent].reduce((sum,c)=>sum+(c.codePointAt(0)>255?px:px*.55),0);
+      const x=(Number(n.getAttribute('x'))-camera.x)/u,canvas=$('map').clientWidth;
+      let dx=Number(n.dataset.dx||9);
+      if(dx<0&&x+dx-width<12)dx=9;
+      if(dx>=0&&x+dx+width>canvas-12)dx=-9;
+      n.setAttribute('font-size',u*px);n.setAttribute('dx',u*dx);n.setAttribute('dy',u*Number(n.dataset.dy||4));n.setAttribute('text-anchor',dx<0?'end':'start');
+    });
+    document.querySelectorAll('.geo-label').forEach(n=>n.setAttribute('font-size',u*13));
     document.querySelectorAll('.route-particle').forEach(n=>n.setAttribute('r',u*2.5));
     document.querySelectorAll('.map-arrow').forEach(n=>{n.setAttribute('markerWidth',u*7);n.setAttribute('markerHeight',u*7);});
   }
@@ -163,6 +178,8 @@
         const relevant=visibleFlows().filter(f=>f.fromId===p.id||f.toId===p.id);
         if(state.view==='history'&&relevant.length)html+='<div class="story-rule"></div>'+relevant.map(f=>`<button class="institution-mini" data-flow-button="${f.id}">${esc(tr(places.get(f.fromId).name))} → ${esc(tr(places.get(f.toId).name))}<small>${esc(tr(f.date))}</small></button>`).join('');
       }
+    }else if(state.view==='history'&&state.stage===4&&routeStories[state.route]){
+      const r=routeStories[state.route];html=`<p class="story-kicker">${esc(routeName(state.route))}</p><p class="story-year">${r.year}</p><h3>${esc(tr(r.title))}</h3><p class="story-copy">${esc(tr(r.text))}</p><div class="story-rule"></div><p class="story-help">${esc(tr(r.help))}</p>`;
     }else{
       html=`<p class="story-kicker">${esc(t('story'))} / 0${state.stage+1}</p><p class="story-year">${state.stage===5?esc(t('now')):esc(chapter.year)}</p><h3>${esc(tr(chapter.title))}</h3><p class="story-copy">${esc(tr(chapter.text))}</p><div class="story-rule"></div><p class="story-help">${esc(state.view==='history'?t('storyHelp'):t('cityNote'))}</p>`;
       if(state.view==='holdings')html+=visibleInstitutions().map(i=>`<button class="institution-mini" data-institution="${i.id}">${esc(tr(i.name))}<small>${esc(tr(places.get(i.city).name))} · ${esc(i.short)}</small></button>`).join('');
@@ -222,7 +239,7 @@
   function togglePresentation(){const active=document.body.classList.toggle('presenting');$('presentation').textContent=t(active?'exitPresent':'present');toast(t(active?'exitHint':'returned'));if(active)$('explore').scrollIntoView({behavior:'instant'});requestAnimationFrame(()=>home(false));}
   $('lang').addEventListener('click',()=>{state.lang=state.lang==='zh'?'en':'zh';renderStaticContent();render();window.dispatchEvent(new CustomEvent('dunhuang:language',{detail:{lang:state.lang}}));});
   $('play').addEventListener('click',play);
-  $('startJourney').addEventListener('click',()=>{pause();state.stage=0;state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;play();$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});
+  $('startJourney')?.addEventListener('click',()=>{pause();state.stage=0;state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;play();$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});
   $('speed').addEventListener('click',()=>{state.speed=state.speed===1?1.5:state.speed===1.5?2:1;$('speed').textContent=state.speed+'×';if(state.playing)startClock();});
   $('yearSlider').addEventListener('input',e=>{pause();setStage(Number(e.target.value));});
   $('historyView').addEventListener('click',()=>{pause();state.view='history';if(state.stage===5)state.stage=4;state.selection=null;render();home();});
@@ -242,7 +259,7 @@
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.playing){pause();render();}});
   reduced.addEventListener('change',()=>renderMap());
   const jsonBlob=new Blob([JSON.stringify(D,null,2)],{type:'application/json;charset=utf-8'});$('downloadData').href=URL.createObjectURL(jsonBlob);
-  buildGeography();renderStaticContent();render();home(false);
+  buildGeography();renderStaticContent();render();fitCamera([...new Set(visibleFlows().flatMap(f=>[f.fromId,f.toId]))],false);
   // Useful for a repeatable presentation and browser verification. No network API.
   window.DUNHUANG_EXHIBITION={selectEvent:id=>{const flow=D.flows.find(f=>f.visible&&f.eventIds.includes(id));if(!flow)return false;pause();state.stage=4;state.view='history';state.route='all';state.material=true;state.knowledge=true;$('materialToggle').checked=true;$('knowledgeToggle').checked=true;state.selection={type:'flow',id:flow.id};render();home(false);$('explore').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});return true;},getState:()=>({...state}),restart:()=>{pause();state.stage=0;state.route='all';play();}};
 })();

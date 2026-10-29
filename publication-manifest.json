@@ -1,7 +1,6 @@
 {
-  "version": "1.1.1",
+  "version": "2.0.0",
   "prepared_date": "2026-10-29",
-  "source_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
   "gephi_nodes": 122,
   "gephi_edges": 136,
   "events": 42,
@@ -15,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "c6793f2fc551d59d31eac243b6ebd1436e4a261d8a0f52ca2f64fad23d3c580c",
-      "bytes": 33699
+      "sha256": "d4fbf19c7324e3ddb7b3a4d25ba85dff6c5f033a616ffd6a8a16fbed386612d8",
+      "bytes": 37498
     },
     {
       "path": "dist/assets/diamond-sutra.jpg",
@@ -45,8 +44,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "e109ecda762a9ff0186ce898777787d3a571a6c14899ce95109b067f095e50ca",
-      "bytes": 15607
+      "sha256": "6db291dfc729e90df37374dea2e0e5b7c2c84e4a9c5131d1273cb94ca27458a1",
+      "bytes": 22914
     },
     {
       "path": "dist/network-data.js",
@@ -60,8 +59,18 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "965a79ec231ecfb1ccfa7593c1b33aee631485fe1e849b98cfb4e6ff7dace9dc",
-      "bytes": 31067
+      "sha256": "b59fc775a69ab93d86a597e9735b9455a161bd032690d3d14ffccf64323e5283",
+      "bytes": 31440
+    },
+    {
+      "path": "dist/story.css",
+      "sha256": "c85cefe9c2fc67ccce8d7664b8b0c0f9a4844d8e963ce180482d68abb30b0b68",
+      "bytes": 25835
+    },
+    {
+      "path": "dist/story.js",
+      "sha256": "de289e32c3a461b3dc7da80a77a4320fec46d857fc8e54956d072bb70b61453f",
+      "bytes": 4299
     },
     {
       "path": "dist/style.css",
@@ -71,5 +80,8 @@
   ],
   "github_owner": "3380903218-cmd",
   "github_repository": "dunhuang-in-motion",
-  "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/"
+  "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
+  "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
+  "previous_release_commit": "d96500bf6649ea464ac745f6affdbe4d70fdc8fc",
+  "presentation": "Three-chapter bilingual story edition"
 }

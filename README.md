@@ -14,6 +14,16 @@ Created for **HY5419 · Digital History, National University of Singapore**, thi
 **Source repository:** [github.com/3380903218-cmd/dunhuang-in-motion](https://github.com/3380903218-cmd/dunhuang-in-motion)
 <!-- PAGES_LINK_END -->
 
+![Dunhuang manuscript exhibition cover](docs/images/cover.png)
+
+## Read the story
+
+The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a persistent chapter navigation makes the sequence visible, and larger reading text gives the historical argument space before the interactive tools.
+
+The route map opens with one Stein-related journey. The relationship graph opens with Pelliot’s recorded knowledge links; **Open the full network** restores all 122 nodes and 136 relationships. Detailed filters, layout options and methodological notes remain available in expandable sections. Collecting institutions are grouped by London, Paris and Beijing.
+
+This narrative layout takes inspiration from the cover, chapter navigation and text–visual pacing of [Storying on the Coquille River](https://storymaps.arcgis.com/stories/3678bc6932c74332b0d57adf3434aa55). It uses the project’s existing local assets and research records.
+
 ![Historical route map](docs/images/map.png)
 
 ## Explore
@@ -37,7 +47,7 @@ The default network view translates five disconnected components closer together
 
 ## Access check
 
-On 29 October 2026, the project owner reported a successful family test in China: the webpage, route map and relationship network all loaded. This is a user-reported test; the location, network operator and browser were not recorded. See [access-check provenance](docs/access-checks.json).
+Before the story-edition redesign, on 29 October 2026, the project owner reported a successful family test in China: the webpage, route map and relationship network all loaded. This is a user-reported test; the location, network operator and browser were not recorded. See [access-check provenance](docs/access-checks.json).
 
 ## Run locally
 
