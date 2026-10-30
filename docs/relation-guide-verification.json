@@ -1,8 +1,8 @@
 {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "checks": [
     {
-      "name": "default activity 320/zh",
+      "name": "Pelliot guide entry 320/zh",
       "passed": true
     },
     {
@@ -30,7 +30,7 @@
       "passed": true
     },
     {
-      "name": "default activity 320/en",
+      "name": "Pelliot guide entry 320/en",
       "passed": true
     },
     {
@@ -58,7 +58,7 @@
       "passed": true
     },
     {
-      "name": "default activity 390/zh",
+      "name": "Pelliot guide entry 390/zh",
       "passed": true
     },
     {
@@ -86,7 +86,7 @@
       "passed": true
     },
     {
-      "name": "default activity 390/en",
+      "name": "Pelliot guide entry 390/en",
       "passed": true
     },
     {
@@ -114,7 +114,7 @@
       "passed": true
     },
     {
-      "name": "default activity 768/zh",
+      "name": "Pelliot guide entry 768/zh",
       "passed": true
     },
     {
@@ -142,7 +142,7 @@
       "passed": true
     },
     {
-      "name": "default activity 768/en",
+      "name": "Pelliot guide entry 768/en",
       "passed": true
     },
     {
@@ -170,7 +170,7 @@
       "passed": true
     },
     {
-      "name": "default activity 1024/zh",
+      "name": "Pelliot guide entry 1024/zh",
       "passed": true
     },
     {
@@ -198,7 +198,7 @@
       "passed": true
     },
     {
-      "name": "default activity 1024/en",
+      "name": "Pelliot guide entry 1024/en",
       "passed": true
     },
     {
@@ -226,7 +226,7 @@
       "passed": true
     },
     {
-      "name": "default activity 1440/zh",
+      "name": "Pelliot guide entry 1440/zh",
       "passed": true
     },
     {
@@ -254,7 +254,7 @@
       "passed": true
     },
     {
-      "name": "default activity 1440/en",
+      "name": "Pelliot guide entry 1440/en",
       "passed": true
     },
     {

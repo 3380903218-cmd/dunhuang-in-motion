@@ -6,7 +6,7 @@
   const height=selector=>document.querySelector(selector)?.getBoundingClientRect().height||0;
   function refresh(){
     const viewport=Math.floor(window.visualViewport?.height||innerHeight),head=Math.ceil(header.getBoundingClientRect().height);
-    const mapControls=height('#exhibition .map-toolbar')+height('#exhibition .timeline');
+    const mapControls=height('#exhibition .map-toolbar');
     const networkControls=height('#networkShell .network-toolbar')+height('#networkShell .network-advanced')+height('.network-legend-row');
     const values=[viewport,head,Math.max(260,Math.min(600,Math.floor(viewport-head-mapControls-28))),Math.max(300,Math.min(600,Math.floor(viewport-head-networkControls-28)))];
     if(values.join('/')===previous)return;previous=values.join('/');

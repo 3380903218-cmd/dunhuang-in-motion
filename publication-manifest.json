@@ -1,6 +1,6 @@
 {
-  "version": "2.4.0",
-  "prepared_date": "2026-10-29",
+  "version": "2.5.0",
+  "prepared_date": "2026-10-30",
   "gephi_nodes": 122,
   "gephi_edges": 136,
   "events": 42,
@@ -14,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "db281b9a09c3b2f27c19482fabb9fe75e737266a648c6057d7a21b6e13e6758a",
-      "bytes": 38720
+      "sha256": "7120f1fd8014f9ac607a8dccbe15c624c789d63a133dda7eac5da44c5d9dede3",
+      "bytes": 38836
     },
     {
       "path": "dist/assets/cave16-manuscripts-1907.jpg",
@@ -69,8 +69,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "411cd539f2100c34f25cebe2705446c0f61a69c0bac5247fa6e5c66c5a690caf",
-      "bytes": 33232
+      "sha256": "d71ee858a118f8b869f718c3a4735d4723af5f5c5bf61226e68d59c5f07bbd72",
+      "bytes": 33208
     },
     {
       "path": "dist/network-data.js",
@@ -118,14 +118,24 @@
       "bytes": 5441
     },
     {
+      "path": "dist/reader-first.css",
+      "sha256": "cb43e8ead4aab8ad6edc650fcc025d3d04e0cab47859820826a9d6a1c61ce3ce",
+      "bytes": 5813
+    },
+    {
+      "path": "dist/reader-first.js",
+      "sha256": "eafde449c0505ce5de75f767a7f877230f224929df23192649788f268441c110",
+      "bytes": 7377
+    },
+    {
       "path": "dist/reading-layout.css",
       "sha256": "4036507303fa71ea68163d0005d7ccb432634d97afcd23569623ad0e9d961780",
       "bytes": 11282
     },
     {
       "path": "dist/reading-layout.js",
-      "sha256": "55403b87ac3f1aeabad8fb393cbac16f6fb293df080e49f9a1fdb1399a45b53f",
-      "bytes": 2129
+      "sha256": "e4f900a53a8436c0b796327a4b7d585a15d9ce71cba65d88a009a1564f1498ea",
+      "bytes": 2097
     },
     {
       "path": "dist/story.css",
@@ -147,8 +157,8 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "32a2ae321a6da4e457b494751d7680290aa54dc2",
-  "presentation": "Single compact chapter navigation, measured anchor offsets, viewport-sized visuals and naturally expanding records",
+  "previous_release_commit": "e566bae9cce4504ae804a8ce9ca682516c7e58f6",
+  "presentation": "Reader-first narrative: visible route overview and three evidence-linked cases; optional map and Gephi research tools",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2,
