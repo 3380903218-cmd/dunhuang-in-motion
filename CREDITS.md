@@ -34,3 +34,7 @@ Relationship-guide ornament: original inline vector lotus drawing and CSS paper/
 - **cave16-1907**, Aurel Stein (1862–1943) / Wikimedia Commons, 1907 negatives. [Public domain; Commons PD-1923 and corroborating PD-old file](https://creativecommons.org/publicdomain/mark/1.0/). [Image record](https://commons.wikimedia.org/wiki/File:Dunhuang_Cave_16.jpg). Local file: `dist/assets/cave16-manuscripts-1907.jpg`. Historic composite showing Cave 16 and manuscript bundles near Cave 17 entrance. No changes to image bytes.
 
 The Cave 16 picture combines two historical negatives; this is identified in the in-page caption. See [Foong Ping, Fig. 1](https://silkroadsarchaeoheritage.org/articles/10.5334/srah.7#F1). The exterior photograph depicts the Cave 96 pavilion and is labelled as site context. All photographs remain local assets and are embedded in the offline editions.
+
+## QGIS project result
+
+**Regional map:** Xiwen Wang, *Physical Circulation and Knowledge Transmission of Dunhuang Manuscripts (Regional Map)*, exported from the author’s QGIS project. The original one-page PDF is retained as `dist/assets/qgis-regional-map.pdf`; the full-page JPEG preview is rendered without cropping or changing its contents. The map’s original sources and legend remain visible. Basemap © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). The QGIS export and its preview are embedded in the offline editions; hashes and artifact details are in `docs/asset-provenance.json`.

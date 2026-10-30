@@ -1,5 +1,5 @@
 {
-  "version": "2.5.0",
+  "version": "2.6.0",
   "prepared_date": "2026-10-30",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -14,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "7120f1fd8014f9ac607a8dccbe15c624c789d63a133dda7eac5da44c5d9dede3",
-      "bytes": 38836
+      "sha256": "8b4907c3aac21243fe8292231f832df89fd946bf237df9a5d371f5a992a6c074",
+      "bytes": 38882
     },
     {
       "path": "dist/assets/cave16-manuscripts-1907.jpg",
@@ -48,6 +48,16 @@
       "bytes": 397790
     },
     {
+      "path": "dist/assets/qgis-map-preview.jpg",
+      "sha256": "4c8235c5c2df6d49d869436f3cceace90a787a72c72ce4e07eb90e0745047508",
+      "bytes": 293677
+    },
+    {
+      "path": "dist/assets/qgis-regional-map.pdf",
+      "sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477",
+      "bytes": 1501847
+    },
+    {
       "path": "dist/assets/world.js",
       "sha256": "2cca0bf60e4bf895ce4a3747e739fad7ae5c615052d27ba05efd72c4a398217f",
       "bytes": 260393
@@ -69,8 +79,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "d71ee858a118f8b869f718c3a4735d4723af5f5c5bf61226e68d59c5f07bbd72",
-      "bytes": 33208
+      "sha256": "5b73babafadf1decc6aef570202366ac3574ecc23923c9a8c7079ee224a158dd",
+      "bytes": 36163
     },
     {
       "path": "dist/network-data.js",
@@ -84,7 +94,7 @@
     },
     {
       "path": "dist/network-guide.js",
-      "sha256": "b2a853d4a08520582b21a796cc7db5af764010ab222092068b22fa5565b42170",
+      "sha256": "bd112e8c8f5c07374b3e371b47583aeab1c06ef2576181b8ef518f94f7cf0b60",
       "bytes": 20639
     },
     {
@@ -99,8 +109,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "bf205405f494ff705bd7575287abba9e9762563dc4f2625e94d52bd5a4435e12",
-      "bytes": 32693
+      "sha256": "a473ddd01a8924e7eacb33736f3be09445dc1a388fda93277226566afd39bf12",
+      "bytes": 32893
     },
     {
       "path": "dist/preservation-data.js",
@@ -124,8 +134,8 @@
     },
     {
       "path": "dist/reader-first.js",
-      "sha256": "eafde449c0505ce5de75f767a7f877230f224929df23192649788f268441c110",
-      "bytes": 7377
+      "sha256": "67d73394d9d90cac35903e1f01180e3c62a619967da3bc5558114b92aa5f91cd",
+      "bytes": 7001
     },
     {
       "path": "dist/reading-layout.css",
@@ -134,8 +144,18 @@
     },
     {
       "path": "dist/reading-layout.js",
-      "sha256": "e4f900a53a8436c0b796327a4b7d585a15d9ce71cba65d88a009a1564f1498ea",
-      "bytes": 2097
+      "sha256": "a301aa2612e2310689d4ee9978fdb3583f2e29ebb1faacc0a336ce750355cf8b",
+      "bytes": 2269
+    },
+    {
+      "path": "dist/results-showcase.css",
+      "sha256": "2f84450404ab84a6a86a58ca392023e5bda46e8cd1e42f9aada6cfd1268528a0",
+      "bytes": 4290
+    },
+    {
+      "path": "dist/results-showcase.js",
+      "sha256": "1e526c981a5723783ab875c42a95d111c95391b097c2d3db3d51eac9ec8d9ad0",
+      "bytes": 3371
     },
     {
       "path": "dist/story.css",
@@ -157,10 +177,11 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "e566bae9cce4504ae804a8ce9ca682516c7e58f6",
-  "presentation": "Reader-first narrative: visible route overview and three evidence-linked cases; optional map and Gephi research tools",
+  "previous_release_commit": "08a4d86b5b8d43aa6d55ea46911477bc24169f57",
+  "presentation": "QGIS and Gephi results are directly visible, with secondary controls and evidence disclosures",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2,
-  "additional_photographs": 3
+  "additional_photographs": 3,
+  "qgis_pdf_sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477"
 }

@@ -1,4 +1,4 @@
-/* Readable examples from the existing evidence snapshot; exploration is optional. */
+/* Supporting case explanations from the existing evidence snapshot. */
 (() => {
   'use strict';
   const D=window.DUNHUANG_NETWORK,host=document.getElementById('knowledgeCases');
@@ -35,12 +35,7 @@
       return `<article class="knowledge-record" id="reading-${ex.id}" data-reading-event="${ex.id}" data-reading-edges="${esc(edges.map(e=>e.id).join(';'))}"><header><p class="record-order">0${i+1} <span>${tr(ex.kind)}</span></p><p class="record-date">${tr(ex.date)}</p><h3>${tr(ex.title)}</h3></header><div class="knowledge-record-content"><p class="knowledge-record-text">${tr(ex.text)}</p><dl class="record-roles">${ex.roles.map(r=>`<div><dt>${tr(r.label)}</dt><dd>${r.ids.map(id=>tr(aliases[id]||nodes.get(id).label)).join(lang==='zh'?'、':'; ')}</dd></div>`).join('')}</dl><p class="record-boundary"><b>${lang==='zh'?'记录的限度':'Limits of the record'}</b>${tr(ex.limit)}</p><div class="record-citations"><span>${lang==='zh'?'依据':'Sources'}</span><ul>${citations}</ul></div></div></article>`;
     }).join('');
   }
-  // Opening a research tool does not reset the visitor's selected record or filters.
-  const explorer=document.getElementById('networkExplorer'),mapExtras=document.getElementById('mapExtras');
-  explorer.addEventListener('toggle',()=>{
-    if(!explorer.open)return;
-    requestAnimationFrame(()=>{window.DUNHUANG_READING_LAYOUT.refresh();requestAnimationFrame(()=>window.DUNHUANG_NETWORK_VIEW.fitVisible());});
-  });
+  const mapExtras=document.getElementById('mapExtras');
   mapExtras.addEventListener('toggle',()=>{
     if(!mapExtras.open&&window.DUNHUANG_EXHIBITION.getState().playing)document.getElementById('play').click();
   });

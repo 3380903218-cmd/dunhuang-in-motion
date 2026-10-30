@@ -55,5 +55,16 @@
       "retrieved": "2026-10-29",
       "modifications": "None; original image bytes, no crop or colour change"
     }
-  ]
+  ],
+  "qgis_result": {
+    "creator": "Xiwen Wang",
+    "original_filename": "敦煌传播地图-区域详图.pdf",
+    "pdf_asset": "dist/assets/qgis-regional-map.pdf",
+    "pdf_sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477",
+    "preview_asset": "dist/assets/qgis-map-preview.jpg",
+    "preview_sha256": "4c8235c5c2df6d49d869436f3cceace90a787a72c72ce4e07eb90e0745047508",
+    "preview": "Full-page raster rendering of the original one-page PDF; no crop or content change.",
+    "basemap_attribution": "© OpenStreetMap contributors; https://www.openstreetmap.org/copyright",
+    "scope": "Earlier regional map result. The web animation includes subsequently verified route records."
+  }
 }

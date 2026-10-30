@@ -41,7 +41,7 @@
   const host=$('network'),shell=$('networkShell');
   const panel=document.createElement('div');panel.id='networkGuide';panel.className='relationship-guide';
   panel.setAttribute('role','region');panel.setAttribute('aria-label','Relationship guide');
-  shell.querySelector('.network-toolbar').insertAdjacentElement('afterend',panel);
+  shell.querySelector('.network-grid').insertAdjacentElement('beforebegin',panel);
   function mode(value){
     G.mode=value;host.dataset.networkView=value;panel.hidden=value!=='guide';
     document.querySelector('.network-grid').hidden=value==='guide';

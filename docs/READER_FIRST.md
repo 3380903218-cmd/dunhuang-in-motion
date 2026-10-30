@@ -1,5 +1,7 @@
 # Reader-first edition, 2.5.0
 
+Historical layout note. Release 2.6.0 restores QGIS and Gephi as directly visible principal results; see [the current arrangement](RESULTS_SHOWCASE.md). The optional-network arrangement described below is superseded.
+
 The previous page placed many choices before the visitor: playback, years, layers, event selection, node search and evidence inspection. This edition gives the principal findings a continuous reading order. Interaction supplements the reading rather than being necessary to reveal it.
 
 ## Reading and optional exploration

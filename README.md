@@ -20,11 +20,11 @@ Created for **HY5419 · Digital History, National University of Singapore**, thi
 
 The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a single compact chapter navigation links directly to each workspace, and larger reading text gives the historical argument space before the interactive tools.
 
-The page can be read without operating its research tools. Three destination summaries accompany a route map that opens with one Stein-related journey. The knowledge chapter presents a telegram, a cataloguing team and an inspection memorandum as readable records, with named roles, sources and limits beside each example. Collecting institutions are grouped by London, Paris and Beijing.
+The two principal results are **directly visible**: the original QGIS regional map and the complete Gephi network of 122 nodes and 136 relationships. The cover and persistent navigation link directly to both figures.
 
-Two optional workspaces retain playback and detailed map records, and the complete **Gephi network: 122 nodes and 136 relationships**. The network opens as the full graph; event guides, search, filters and individual evidence remain available inside it. See [reader-first arrangement](docs/READER_FIRST.md).
+The QGIS map retains its original legend, sources and downloadable PDF; an adjacent tab opens the animated web route view. The Gephi graph appears before the supporting case explanations. Search, filters and long evidence records are secondary controls. See [the results-first arrangement](docs/RESULTS_SHOWCASE.md).
 
-![Readable examples of knowledge transmission](docs/images/knowledge-records.png)
+![Original QGIS regional map](docs/images/qgis-result.png)
 
 ![Event-centred relationship guide](docs/images/network-guide.png)
 
@@ -34,9 +34,9 @@ This narrative layout takes inspiration from the cover, chapter navigation and t
 
 ## Explore
 
-- **Historical journeys:** three visible destinations and route switching; playback, layers and individual records are optional.
+- **Historical journeys:** the QGIS regional map and original PDF, with an animated route view and supplementary playback tools.
 - **Readable knowledge records:** three examples with names, roles, dates, evidence locations and uncertainties displayed directly.
-- **Optional Gephi workspace:** 122 nodes, 136 directed relationships and 42 events; bilingual search, neighbourhood focus, edge inspection and year filtering.
+- **Gephi result:** 122 nodes, 136 directed relationships and 42 events; bilingual search, neighbourhood focus, edge inspection and year filtering.
 - **Relationship guide:** full names, explicit roles and event-centred diagrams, with original source/target directions and edge-specific evidence. See [display rules and provenance](docs/RELATIONSHIP_GUIDE.md).
 - **Cave photographs:** three locally hosted, credited images between the narrative chapters, with bilingual captions and a keyboard-accessible viewer.
 - **Collections today:** five related institutions across London, Paris and Beijing, with official collection links. The preservation section compares three dated treatment examples, with two further studies of fragmentation and rebinding; see [sources and boundaries](docs/PRESERVATION.md).
@@ -110,8 +110,8 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 这是一个用于NUS HY5419课程的敦煌数字历史作品，把路线地图、Gephi关系网络、今日馆藏及可追溯来源放在同一网页中。网页默认英文，支持中文切换，适合课堂展演和个人作品集展示。网址添加 `?lang=zh` 可直接以中文打开。
 
-正文直接展示三条流转线索和三个知识传播实例。地图的播放、图层与逐条记录，以及完整 Gephi 网络的搜索、筛选和证据，分别集中在两个默认收起的可选入口中。原有研究工具和数据继续保留。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
+网页以 **QGIS 路线地图与 Gephi 关系网络成果展示**为重点，两项成果均在正文直接呈现。地图默认显示 QGIS 区域详图，并保留原始 PDF 和路线动画。完整 Gephi 图位于案例说明之前；搜索、筛选与长篇证据作为辅助工具收起。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
 
-Website release **v2.5.0 · 30 October 2026**.
+Website release **v2.6.0 · 30 October 2026**.
 
-The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current reading sequence](docs/READER_FIRST.md).
+The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current results presentation](docs/RESULTS_SHOWCASE.md).

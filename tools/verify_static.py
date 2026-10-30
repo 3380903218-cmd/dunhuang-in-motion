@@ -30,6 +30,8 @@ assert hashlib.sha256(gexf.read_bytes()).hexdigest()==data['meta']['sourceHash']
 xml=ET.parse(gexf).getroot();ns={'g':xml.tag.split('}')[0][1:]}
 assert len(xml.findall('.//g:node',ns))==122 and len(xml.findall('.//g:edge',ns))==136
 manifest=json.loads((ROOT/'publication-manifest.json').read_text())
+if manifest.get('qgis_pdf_sha256'):
+    assert hashlib.sha256((DIST/'assets/qgis-regional-map.pdf').read_bytes()).hexdigest()==manifest['qgis_pdf_sha256']
 for e in manifest['publication_files']:
     p=ROOT/e['path'];assert hashlib.sha256(p.read_bytes()).hexdigest()==e['sha256'],e['path']
 for p in DIST.rglob('*'):

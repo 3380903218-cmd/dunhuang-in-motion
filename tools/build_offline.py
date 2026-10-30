@@ -21,9 +21,10 @@ if args.lang=='zh':
 html=html.replace('</body>','<script>'+scripts.replace('</script','<\\/script')+'</script>\n</body>')
 # Inline every local raster image used by HTML, including narrative photographs.
 rasters=sorted(set(re.findall(r'(?:src|href)="(assets/[^"?]+\.(?:jpg|jpeg|png|webp))"',html)))
-for name in rasters+['assets/dunhuang-network.gexf']:
+documents=sorted(set(re.findall(r'href="(assets/[^"?]+\.pdf)"',html)))
+for name in rasters+documents+['assets/dunhuang-network.gexf']:
     suffix=Path(name).suffix.lower()
-    mime={'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gexf':'application/gexf+xml'}[suffix]
+    mime={'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gexf':'application/gexf+xml','.pdf':'application/pdf'}[suffix]
     html=html.replace(name,'data:'+mime+';base64,'+base64.b64encode((dist/name).read_bytes()).decode())
 html=html.replace('assets/favicon.svg','data:image/svg+xml,'+urllib.parse.quote((dist/'assets/favicon.svg').read_text(encoding='utf-8'),safe=''))
 args.output.parent.mkdir(parents=True,exist_ok=True)
