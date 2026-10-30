@@ -1,5 +1,5 @@
 {
-  "version": "2.7.0",
+  "version": "2.8.0",
   "checks": [
     {
       "name": "Pelliot guide entry 320/zh",
@@ -282,10 +282,10 @@
       "passed": true
     },
     {
-      "name": "all 42 event projections preserve original edges",
+      "name": "all 48 activity projections preserve original edges",
       "passed": true,
       "detail": {
-        "events": 42,
+        "events": 48,
         "failures": []
       }
     },

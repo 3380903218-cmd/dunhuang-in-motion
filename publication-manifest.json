@@ -1,11 +1,11 @@
 {
-  "version": "2.7.0",
+  "version": "2.8.0",
   "prepared_date": "2026-10-30",
-  "gephi_nodes": 122,
-  "gephi_edges": 136,
-  "events": 42,
+  "gephi_nodes": 132,
+  "gephi_edges": 157,
+  "events": 48,
   "research_sources": 21,
-  "evidence_records": 49,
+  "evidence_records": 57,
   "publication_files": [
     {
       "path": "dist/.nojekyll",
@@ -33,6 +33,11 @@
       "bytes": 982634
     },
     {
+      "path": "dist/assets/dunhuang-network-expanded.gexf",
+      "sha256": "a37c79759698788d7628dca4844c2db341ab59258124f977385f8e105481071d",
+      "bytes": 313709
+    },
+    {
       "path": "dist/assets/dunhuang-network.gexf",
       "sha256": "edf3f7dd37e31d7f23e500b23d16a438b712574d338e5d0a4bb51baf40714c90",
       "bytes": 272357
@@ -48,6 +53,16 @@
       "bytes": 397790
     },
     {
+      "path": "dist/assets/network-expanded-edges.csv",
+      "sha256": "e5177e655a7622889964db567cf6ae688594d96f44961a8cfeffa06ffe863b77",
+      "bytes": 58438
+    },
+    {
+      "path": "dist/assets/network-expanded-nodes.csv",
+      "sha256": "7899aa1878bf1c3cee3860b8483e1b36bae746f7090e47843a27226399a185a1",
+      "bytes": 39191
+    },
+    {
       "path": "dist/assets/qgis-map-preview.jpg",
       "sha256": "4c8235c5c2df6d49d869436f3cceace90a787a72c72ce4e07eb90e0745047508",
       "bytes": 293677
@@ -56,6 +71,11 @@
       "path": "dist/assets/qgis-regional-map.pdf",
       "sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477",
       "bytes": 1501847
+    },
+    {
+      "path": "dist/assets/relationship-supplement-evidence.csv",
+      "sha256": "f67b4768fb6b731e37d11dd9daf62eb5bd334dd7b5e838aa9be5acd402400040",
+      "bytes": 7217
     },
     {
       "path": "dist/assets/world.js",
@@ -79,8 +99,8 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "4e1ed90b4c241936cc02619de45a427dd4e046af1aa39c20a39d2d6722b88ff7",
-      "bytes": 36877
+      "sha256": "6c17cd6f5dc0825ea375e4fdabfaa000bbd0dd3af11fc166928939b033c6d0d7",
+      "bytes": 38307
     },
     {
       "path": "dist/narrative-reading.css",
@@ -109,8 +129,8 @@
     },
     {
       "path": "dist/network-roles.js",
-      "sha256": "92f9676aea2e06cb8d1068492b78af95fd21cb1959339ce57aa769a263a17053",
-      "bytes": 4511
+      "sha256": "185d651a4ab443c5aa70485b16bcf4ee8c5516807ae8017adbca8d4f635d0892",
+      "bytes": 4596
     },
     {
       "path": "dist/network.css",
@@ -119,8 +139,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "d69987d1961970080481b731e2d7dcefcb70d699306acf43fd7a127fdc860771",
-      "bytes": 32883
+      "sha256": "2ee427c1166b8cd384862f6b8969e072bb243a895ab2604c386c5278ccc95cd4",
+      "bytes": 33165
     },
     {
       "path": "dist/preservation-data.js",
@@ -158,6 +178,26 @@
       "bytes": 2269
     },
     {
+      "path": "dist/relationship-supplement-data.js",
+      "sha256": "8da0fa3b01b4fbc9aa980160667706e0b6436ef9755182ed6da5ed052e4e44a2",
+      "bytes": 33518
+    },
+    {
+      "path": "dist/relationship-supplement.js",
+      "sha256": "cb81bc8e49a201f64b819bf2bcff0561828ddf81bdc239f284e6b25a19a0a791",
+      "bytes": 924
+    },
+    {
+      "path": "dist/relationships-reading.css",
+      "sha256": "61f82a7a95c5f1295bbbaf5cb2ab9b22388b84739f7eff32b4de09e74c217b0e",
+      "bytes": 2072
+    },
+    {
+      "path": "dist/relationships-reading.js",
+      "sha256": "048364660dd78d9a3b53a4b5e2245af398c497ba73d38258be2c3e390aa0f27a",
+      "bytes": 10284
+    },
+    {
       "path": "dist/results-showcase.css",
       "sha256": "2f84450404ab84a6a86a58ca392023e5bda46e8cd1e42f9aada6cfd1268528a0",
       "bytes": 4290
@@ -187,11 +227,17 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "0f66b550f67c829394a29cd0e3503b1e7193fe75",
-  "presentation": "Evidence-led reading of manuscript journeys, scholarly activities and collections, with directly visible maps and Gephi network",
+  "previous_release_commit": "a4b8a55bd22dfb27596376c71fa99b6b4ef3edc2",
+  "presentation": "Historical reading with visible QGIS map and full Gephi network, expanded by source-located scholarly contacts within 1900–1910; original export retained",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2,
   "additional_photographs": 3,
-  "qgis_pdf_sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477"
+  "qgis_pdf_sha256": "a06b0feb90bc04f5c0d81d2d77754ee98570f1ab433b4f25b0954b9ed780d477",
+  "original_gephi_nodes": 122,
+  "original_gephi_edges": 136,
+  "added_nodes": 10,
+  "added_edges": 21,
+  "added_activity_records": 6,
+  "added_evidence_records": 8
 }

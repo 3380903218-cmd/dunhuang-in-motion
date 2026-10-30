@@ -38,6 +38,7 @@
     annotator:['Annotation','补注文书'],unpacking_note:['Unpacking note','拆箱记录']
   };
   window.DUNHUANG_RELATION_TEXT=(edge,lang,fallback='')=>{
+    if(edge.attributes.RoleEN)return edge.attributes[lang==='zh'?'RoleZH':'RoleEN'];
     const role=edge.attributes.Role||'',item=labels[role];
     return item?item[lang==='zh'?1:0]:fallback||edge.label||role;
   };

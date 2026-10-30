@@ -29,6 +29,22 @@ gexf=DIST/'assets/dunhuang-network.gexf'
 assert hashlib.sha256(gexf.read_bytes()).hexdigest()==data['meta']['sourceHash']
 xml=ET.parse(gexf).getroot();ns={'g':xml.tag.split('}')[0][1:]}
 assert len(xml.findall('.//g:node',ns))==122 and len(xml.findall('.//g:edge',ns))==136
+extra_source=(DIST/'relationship-supplement-data.js').read_text(encoding='utf-8')
+extra=json.loads(extra_source.split('=',1)[1].strip().removesuffix(';'))
+assert extra['meta']['baseHash']==data['meta']['sourceHash']
+assert [len(extra[k]) for k in ('nodes','edges','events','evidence')]==[10,21,6,8]
+expanded=ET.parse(DIST/'assets/dunhuang-network-expanded.gexf').getroot()
+assert len(expanded.findall('.//g:node',ns))==132 and len(expanded.findall('.//g:edge',ns))==157
+for kind in ('node','edge'):
+    originals={x.get('id'):x for x in xml.findall('.//g:'+kind,ns)}
+    extended={x.get('id'):x for x in expanded.findall('.//g:'+kind,ns)}
+    for key,item in originals.items():
+        other=extended[key]
+        assert item.attrib==other.attrib
+        def semantic(element):
+            return (element.tag,sorted(element.attrib.items()),tuple(semantic(c) for c in element))
+        assert semantic(item)==semantic(other),key
+assert all(e.get('claimEN') and e.get('limitEN') and e.get('primaryReference') for e in extra['evidence'])
 manifest=json.loads((ROOT/'publication-manifest.json').read_text())
 if manifest.get('qgis_pdf_sha256'):
     assert hashlib.sha256((DIST/'assets/qgis-regional-map.pdf').read_bytes()).hexdigest()==manifest['qgis_pdf_sha256']

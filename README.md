@@ -24,7 +24,7 @@ The exhibition asks where manuscripts were sent, who examined and organised them
 
 Follow a route, read the Beijing–Lanzhou telegram, then examine the network through Pelliot’s memorandum and the London cataloguing team. Each example gives names, recorded roles, source pages and uncertainty. Contextual actions locate the event being discussed; a further-reading section leads to the corresponding source passages. See [reading and research use](docs/NARRATIVE_READING.md).
 
-The default map is the interactive route view. The original QGIS regional export and PDF remain available as a reference. The complete Gephi graph has 122 nodes and 136 relationships; search and advanced filters remain secondary tools.
+The default map is the interactive route view. The original QGIS regional export and PDF remain available as a reference. The full graph combines the preserved Gephi export (122 nodes, 136 relationships) with cited additions, for 132 nodes and 157 relationships. Search and advanced filters remain secondary tools.
 
 ![Original QGIS regional map, retained as a regional reference](docs/images/qgis-result.png)
 
@@ -38,12 +38,12 @@ This narrative layout takes inspiration from the cover, chapter navigation and t
 
 - **Historical journeys:** the QGIS regional map and original PDF, with an animated route view and supplementary playback tools.
 - **Readable knowledge records:** three examples with names, roles, dates, evidence locations and uncertainties displayed directly.
-- **Gephi result:** 122 nodes, 136 directed relationships and 42 events; bilingual search, neighbourhood focus, edge inspection and year filtering.
+- **Gephi result with cited additions:** 132 nodes, 157 directed relationships and 48 activity records; bilingual search, neighbourhood focus, edge inspection and year filtering.
 - **Relationship guide:** full names, explicit roles and event-centred diagrams, with original source/target directions and edge-specific evidence. See [display rules and provenance](docs/RELATIONSHIP_GUIDE.md).
 - **Cave photographs:** three locally hosted, credited images between the narrative chapters, with bilingual captions and a keyboard-accessible viewer.
 - **Collections today:** five related institutions across London, Paris and Beijing, with official collection links. The preservation section compares three dated treatment examples, with two further studies of fragmentation and rebinding; see [sources and boundaries](docs/PRESERVATION.md).
 - **English / 中文:** switches the interface, narrative, network labels and research summaries while preserving selections.
-- **Evidence access:** 21 network source entries and 49 evidence records, including English summaries and the limits of the supporting material.
+- **Evidence access:** 21 network source entries and 57 evidence records, including English summaries and the limits of the supporting material.
 - **Presentation and accessibility:** presentation mode, keyboard controls, searchable node and relationship lists, and responsive layouts.
 
 ![Interactive Gephi relationship network](docs/images/network.png)
@@ -114,6 +114,9 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 网页围绕“文献被运往何处、谁参与检查与整理、今天如何保存”展开。流转地图和完整Gephi网络在正文直接可见，电报、检查备忘录与编目团队的记录为图形提供具体解释。各例附来源与页码，可在图中定位，再继续查阅原文或馆藏目录。QGIS原始区域详图、PDF和Gephi原文件保留查阅与下载；软件名称与文件入口放在方法说明和图注中。
 
-Website release **v2.7.0 · 30 October 2026**.
+Website release **v2.8.0 · 30 October 2026**.
 
 The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current reading sequence](docs/NARRATIVE_READING.md).
+
+
+Edition 2.8.0 adds source-located scholarly contacts from 1909–1910. The original Gephi file is unchanged; new nodes have provisional positions and have not been assigned new centrality values. Six added activity records can overlap earlier viewing accounts. See [the additions, evidence limits and Gephi import guide](docs/relationship-additions.md).
