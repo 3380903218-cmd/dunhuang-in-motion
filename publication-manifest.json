@@ -1,5 +1,5 @@
 {
-  "version": "2.6.0",
+  "version": "2.7.0",
   "prepared_date": "2026-10-30",
   "gephi_nodes": 122,
   "gephi_edges": 136,
@@ -14,8 +14,8 @@
     },
     {
       "path": "dist/app.js",
-      "sha256": "8b4907c3aac21243fe8292231f832df89fd946bf237df9a5d371f5a992a6c074",
-      "bytes": 38882
+      "sha256": "1e9f2069f0a0daf372f1957612d1f0ac8a7ab3815c88fcf6c2ab39759ab86de4",
+      "bytes": 38896
     },
     {
       "path": "dist/assets/cave16-manuscripts-1907.jpg",
@@ -79,8 +79,18 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "5b73babafadf1decc6aef570202366ac3574ecc23923c9a8c7079ee224a158dd",
-      "bytes": 36163
+      "sha256": "4e1ed90b4c241936cc02619de45a427dd4e046af1aa39c20a39d2d6722b88ff7",
+      "bytes": 36877
+    },
+    {
+      "path": "dist/narrative-reading.css",
+      "sha256": "f5f186a82a7e6e020a11021f8af75871b7653dbd751f3759ca150f62aae00e47",
+      "bytes": 4185
+    },
+    {
+      "path": "dist/narrative-reading.js",
+      "sha256": "21cd3f9c875555763b479777ada25228306be5c13d2c9971eb6e7dd2ed913dee",
+      "bytes": 2374
     },
     {
       "path": "dist/network-data.js",
@@ -109,8 +119,8 @@
     },
     {
       "path": "dist/network.js",
-      "sha256": "a473ddd01a8924e7eacb33736f3be09445dc1a388fda93277226566afd39bf12",
-      "bytes": 32893
+      "sha256": "d69987d1961970080481b731e2d7dcefcb70d699306acf43fd7a127fdc860771",
+      "bytes": 32883
     },
     {
       "path": "dist/preservation-data.js",
@@ -134,8 +144,8 @@
     },
     {
       "path": "dist/reader-first.js",
-      "sha256": "67d73394d9d90cac35903e1f01180e3c62a619967da3bc5558114b92aa5f91cd",
-      "bytes": 7001
+      "sha256": "a7c907cf1418faf6a7283a7da79000fbbf2fd0ecda302f6fa81e7e54702d414b",
+      "bytes": 8315
     },
     {
       "path": "dist/reading-layout.css",
@@ -154,8 +164,8 @@
     },
     {
       "path": "dist/results-showcase.js",
-      "sha256": "1e526c981a5723783ab875c42a95d111c95391b097c2d3db3d51eac9ec8d9ad0",
-      "bytes": 3371
+      "sha256": "0a66a2c8eedddf906e01d77e2c1b10663f98f8236a301bb595897ea55ae2cb76",
+      "bytes": 3515
     },
     {
       "path": "dist/story.css",
@@ -177,8 +187,8 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "08a4d86b5b8d43aa6d55ea46911477bc24169f57",
-  "presentation": "QGIS and Gephi results are directly visible, with secondary controls and evidence disclosures",
+  "previous_release_commit": "0f66b550f67c829394a29cd0e3503b1e7193fe75",
+  "presentation": "Evidence-led reading of manuscript journeys, scholarly activities and collections, with directly visible maps and Gephi network",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
   "preservation_history_examples": 2,

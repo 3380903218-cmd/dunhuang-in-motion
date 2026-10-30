@@ -20,11 +20,13 @@ Created for **HY5419 · Digital History, National University of Singapore**, thi
 
 The exhibition follows three chapters: **the material journeys → the circulation of knowledge → collections today**. A visual cover introduces the question, a single compact chapter navigation links directly to each workspace, and larger reading text gives the historical argument space before the interactive tools.
 
-The two principal results are **directly visible**: the original QGIS regional map and the complete Gephi network of 122 nodes and 136 relationships. The cover and persistent navigation link directly to both figures.
+The exhibition asks where manuscripts were sent, who examined and organised them, and how the collections survive today. Maps and the complete Gephi network are directly visible within that reading sequence.
 
-The QGIS map retains its original legend, sources and downloadable PDF; an adjacent tab opens the animated web route view. The Gephi graph appears before the supporting case explanations. Search, filters and long evidence records are secondary controls. See [the results-first arrangement](docs/RESULTS_SHOWCASE.md).
+Follow a route, read the Beijing–Lanzhou telegram, then examine the network through Pelliot’s memorandum and the London cataloguing team. Each example gives names, recorded roles, source pages and uncertainty. Contextual actions locate the event being discussed; a further-reading section leads to the corresponding source passages. See [reading and research use](docs/NARRATIVE_READING.md).
 
-![Original QGIS regional map](docs/images/qgis-result.png)
+The default map is the interactive route view. The original QGIS regional export and PDF remain available as a reference. The complete Gephi graph has 122 nodes and 136 relationships; search and advanced filters remain secondary tools.
+
+![Original QGIS regional map, retained as a regional reference](docs/images/qgis-result.png)
 
 ![Event-centred relationship guide](docs/images/network-guide.png)
 
@@ -110,8 +112,8 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 这是一个用于NUS HY5419课程的敦煌数字历史作品，把路线地图、Gephi关系网络、今日馆藏及可追溯来源放在同一网页中。网页默认英文，支持中文切换，适合课堂展演和个人作品集展示。网址添加 `?lang=zh` 可直接以中文打开。
 
-网页以 **QGIS 路线地图与 Gephi 关系网络成果展示**为重点，两项成果均在正文直接呈现。地图默认显示 QGIS 区域详图，并保留原始 PDF 和路线动画。完整 Gephi 图位于案例说明之前；搜索、筛选与长篇证据作为辅助工具收起。项目的研究范围、证据限制和资产来源分别见 [DATA_NOTES.md](DATA_NOTES.md) 与 [CREDITS.md](CREDITS.md)。
+网页围绕“文献被运往何处、谁参与检查与整理、今天如何保存”展开。流转地图和完整Gephi网络在正文直接可见，电报、检查备忘录与编目团队的记录为图形提供具体解释。各例附来源与页码，可在图中定位，再继续查阅原文或馆藏目录。QGIS原始区域详图、PDF和Gephi原文件保留查阅与下载；软件名称与文件入口放在方法说明和图注中。
 
-Website release **v2.6.0 · 30 October 2026**.
+Website release **v2.7.0 · 30 October 2026**.
 
-The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current results presentation](docs/RESULTS_SHOWCASE.md).
+The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current reading sequence](docs/NARRATIVE_READING.md).

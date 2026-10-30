@@ -1,5 +1,7 @@
 # QGIS and Gephi results, release 2.6.0
 
+Historical arrangement. Release 2.7.0 integrates the figures into a reading sequence, makes the route view the default map and retains the original QGIS export as a regional reference. See [the current reading and research design](NARRATIVE_READING.md). The complete Gephi graph remains directly visible.
+
 The principal purpose of the exhibition is to present the project’s QGIS and Gephi work. Both results are directly visible in the main page. The Gephi result is not placed inside an optional reading or exploration disclosure.
 
 ## Principal figures
