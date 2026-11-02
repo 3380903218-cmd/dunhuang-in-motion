@@ -1,8 +1,8 @@
 # Public reader discussion
 
-Release 2.9.0, prepared on 3 November 2026. The Supabase database and public function are deployed and have passed real save/read/reply, retry and moderation checks. GitHub Pages publication is recorded in the release verification file.
+Release 2.9.1, prepared on 3 November 2026. The Supabase database and public function are deployed and have passed real save/read/reply, retry and moderation checks. GitHub Pages publication is recorded in the release verification file.
 
-The discussion follows the sources chapter. Readers supply a display name, select an optional topic and post a question or suggestion. Replies stay under the original question. Reading and posting require no visitor account. English and Chinese switch the interface, preserving the reader's original text and unfinished draft. There is no voting, pop-up or notification subscription.
+The discussion follows the sources chapter. Readers supply a display name, select an optional topic and post a question or suggestion. Replies stay under the original question. Reading and posting require no visitor account. Messages and replies may be written in any language. English and Chinese switch only the interface, preserving the reader's original text and unfinished draft. There is no voting, pop-up or notification subscription.
 
 ## Data boundary
 

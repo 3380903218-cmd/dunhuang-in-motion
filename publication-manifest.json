@@ -1,5 +1,5 @@
 {
-  "version": "2.9.0",
+  "version": "2.9.1",
   "prepared_date": "2026-11-03",
   "gephi_nodes": 132,
   "gephi_edges": 157,
@@ -109,12 +109,12 @@
     },
     {
       "path": "dist/discussion.js",
-      "sha256": "4d75e7bc72b79fe8ecf6bf30a0157f6a39834360f706d050e00736f6fcd309ef",
-      "bytes": 15918
+      "sha256": "258f823f4bf9e86d66f6c0b7f3aabfe46453ad521062967624f4419099058305",
+      "bytes": 16101
     },
     {
       "path": "dist/index.html",
-      "sha256": "2dc0a569c8964aa38516c3a79cbf20e5b01d03180308adaed8e2a59c661f02f7",
+      "sha256": "f68c693fd8d738789c61641c9d5a25ac3a8ec4ce8effc02693a9b194629bbf6a",
       "bytes": 38723
     },
     {
@@ -242,7 +242,7 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "1baf9c5905e101e8982c4383ffad90cb02ff3102",
+  "previous_release_commit": "4cf7e05bdc1ec5ede2eaecb7333c1f6adaa7090a",
   "presentation": "Historical reading with visible QGIS map and full Gephi network, expanded by source-located scholarly contacts within 1900–1910; original export retained",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
@@ -264,6 +264,11 @@
     "region": "ap-southeast-1",
     "quoted_cost_usd_per_month": 0,
     "public_reading": true,
-    "threaded_replies": true
+    "threaded_replies": true,
+    "message_languages": "unrestricted",
+    "interface_languages": [
+      "en",
+      "zh"
+    ]
   }
 }
