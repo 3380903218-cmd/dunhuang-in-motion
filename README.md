@@ -43,6 +43,7 @@ This narrative layout takes inspiration from the cover, chapter navigation and t
 - **Cave photographs:** three locally hosted, credited images between the narrative chapters, with bilingual captions and a keyboard-accessible viewer.
 - **Collections today:** five related institutions across London, Paris and Beijing, with official collection links. The preservation section compares three dated treatment examples, with two further studies of fragmentation and rebinding; see [sources and boundaries](docs/PRESERVATION.md).
 - **English / 中文:** switches the interface, narrative, network labels and research summaries while preserving selections.
+- **Reader discussion:** a public, bilingual discussion after the sources chapter. Readers post with a display name and reply under an existing question; messages are saved in the project’s Supabase database. [Implementation and owner moderation](docs/DISCUSSION.md).
 - **Evidence access:** 21 network source entries and 57 evidence records, including English summaries and the limits of the supporting material.
 - **Presentation and accessibility:** presentation mode, keyboard controls, searchable node and relationship lists, and responsive layouts.
 
@@ -114,9 +115,11 @@ Historical evidence organisation · relational data modelling · Gephi network v
 
 网页围绕“文献被运往何处、谁参与检查与整理、今天如何保存”展开。流转地图和完整Gephi网络在正文直接可见，电报、检查备忘录与编目团队的记录为图形提供具体解释。各例附来源与页码，可在图中定位，再继续查阅原文或馆藏目录。QGIS原始区域详图、PDF和Gephi原文件保留查阅与下载；软件名称与文件入口放在方法说明和图注中。
 
-Website release **v2.8.0 · 30 October 2026**.
+Website release **v2.9.0 · 3 November 2026**.
 
 The layout retains the viewport sizing and normal-flow records introduced in 2.4. Playback controls now sit inside the optional map tools below the visual. See [layout rules](docs/READING_LAYOUT.md) and [the current reading sequence](docs/NARRATIVE_READING.md).
 
 
 Edition 2.8.0 adds source-located scholarly contacts from 1909–1910. The original Gephi file is unchanged; new nodes have provisional positions and have not been assigned new centrality values. Six added activity records can overlap earlier viewing accounts. See [the additions, evidence limits and Gephi import guide](docs/relationship-additions.md).
+
+Edition 2.9.0 adds public reader discussions with shared storage and threaded replies. Visitor accounts are not required. The project owner manages visibility through the database dashboard; reader messages remain separate from verified historical evidence.

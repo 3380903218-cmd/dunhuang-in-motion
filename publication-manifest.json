@@ -1,6 +1,6 @@
 {
-  "version": "2.8.0",
-  "prepared_date": "2026-10-30",
+  "version": "2.9.0",
+  "prepared_date": "2026-11-03",
   "gephi_nodes": 132,
   "gephi_edges": 157,
   "events": 48,
@@ -98,9 +98,24 @@
       "bytes": 33593
     },
     {
+      "path": "dist/discussion-config.js",
+      "sha256": "fb496f68b1f956067aae84619cdda9a765de79102f51a5864e328c4bcfe52adf",
+      "bytes": 288
+    },
+    {
+      "path": "dist/discussion.css",
+      "sha256": "e25dee94fc32910f45af2a0b36f62dc24b518802464b62b5d231e768dadba710",
+      "bytes": 5220
+    },
+    {
+      "path": "dist/discussion.js",
+      "sha256": "4d75e7bc72b79fe8ecf6bf30a0157f6a39834360f706d050e00736f6fcd309ef",
+      "bytes": 15918
+    },
+    {
       "path": "dist/index.html",
-      "sha256": "6c17cd6f5dc0825ea375e4fdabfaa000bbd0dd3af11fc166928939b033c6d0d7",
-      "bytes": 38307
+      "sha256": "2dc0a569c8964aa38516c3a79cbf20e5b01d03180308adaed8e2a59c661f02f7",
+      "bytes": 38723
     },
     {
       "path": "dist/narrative-reading.css",
@@ -227,7 +242,7 @@
   "github_repository": "dunhuang-in-motion",
   "pages_url": "https://3380903218-cmd.github.io/dunhuang-in-motion/",
   "research_base_commit": "54364b6665fa08f67219f5c6bf11caf7cb09db56",
-  "previous_release_commit": "a4b8a55bd22dfb27596376c71fa99b6b4ef3edc2",
+  "previous_release_commit": "1baf9c5905e101e8982c4383ffad90cb02ff3102",
   "presentation": "Historical reading with visible QGIS map and full Gephi network, expanded by source-located scholarly contacts within 1900–1910; original export retained",
   "preservation_sources": 6,
   "preservation_treatment_examples": 3,
@@ -239,5 +254,16 @@
   "added_nodes": 10,
   "added_edges": 21,
   "added_activity_records": 6,
-  "added_evidence_records": 8
+  "added_evidence_records": 8,
+  "discussion": {
+    "enabled": true,
+    "provider": "Supabase",
+    "account_required_for_visitors": false,
+    "api_url": "https://qtuxpxccweapkqeoaata.supabase.co/functions/v1/dunhuang-discussion",
+    "project_id": "qtuxpxccweapkqeoaata",
+    "region": "ap-southeast-1",
+    "quoted_cost_usd_per_month": 0,
+    "public_reading": true,
+    "threaded_replies": true
+  }
 }
